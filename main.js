@@ -133,13 +133,17 @@ document.addEventListener('DOMContentLoaded', () => {
                 peopleInfo,
                 corporateInfo,
                 socialInfo,
-                financialHistory 
+                stockInfo,
+                brandsInfo,
+                financialHistory
             ] = await Promise.all([
                 executeQuery(getCoreInfoQuery(wikidataId)),
                 executeQuery(getPeopleQuery(wikidataId)),
                 executeQuery(getCorporateQuery(wikidataId)),
                 executeQuery(getSocialQuery(wikidataId)),
-                executeQuery(getFinancialHistoryQuery(wikidataId)) 
+                executeQuery(getStockInfoQuery(wikidataId)),
+                executeQuery(getBrandsQuery(wikidataId)),
+                executeQuery(getFinancialHistoryQuery(wikidataId))
             ]);
 
             const mergedData = mergeResults({
@@ -147,7 +151,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 people: peopleInfo,
                 corporate: corporateInfo,
                 social: socialInfo,
-                financialHistory: financialHistory 
+                stock: stockInfo,
+                brands: brandsInfo,
+                financialHistory: financialHistory
             });
 
             renderResults(mergedData, companyLabel); // companyLabel passed, but not used by renderResults for title
@@ -164,7 +170,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const mergedBinding = {};
         const allVars = [];
 
-        ['core', 'people', 'corporate', 'social'].forEach(key => {
+        ['core', 'people', 'corporate', 'social', 'stock', 'brands'].forEach(key => {
             const result = results[key];
             if (result && result.results.bindings.length > 0) {
                 Object.assign(mergedBinding, result.results.bindings[0]);
@@ -209,18 +215,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Query Definitions ---
     function getCoreInfoQuery(wikidataId) {
-        // This query is now more robust. (This comment was added during the problematic fix)
         return `SELECT ?WIKIDATA
             (SAMPLE(?COMPANY_label) AS ?COMPANY_label)
             (SAMPLE(?COUNTRY_label) AS ?COUNTRY_label)
             (SAMPLE(?wikipedia_url) AS ?WIKIPEDIA_URL)
             (SAMPLE(?inception_date) AS ?INCEPTION_DATE)
+            (SAMPLE(?legal_form_label) AS ?LEGAL_FORM)
+            (SAMPLE(?named_after_label) AS ?NAMED_AFTER)
+            (SAMPLE(?slogan) AS ?SLOGAN)
+            (SAMPLE(?employees_count) AS ?EMPLOYEES_COUNT)
+            (SAMPLE(?replaces_label) AS ?REPLACES)
+            (SAMPLE(?replaced_by_label) AS ?REPLACED_BY)
             (GROUP_CONCAT(DISTINCT ?SECTOR_label; separator=", ") AS ?SECTORS)
             (GROUP_CONCAT(DISTINCT ?HEADQUARTERS_label; separator=", ") AS ?HEADQUARTERS)
+            (GROUP_CONCAT(DISTINCT ?founder_label; separator=", ") AS ?FOUNDED_BY)
             WHERE {
                 VALUES ?WIKIDATA { wd:${wikidataId} }
                 ?WIKIDATA rdfs:label ?COMPANY_label. FILTER(LANG(?COMPANY_label) = "en")
-                
+
                 OPTIONAL {
                     ?WIKIDATA wdt:P17 ?COUNTRY.
                     ?COUNTRY rdfs:label ?COUNTRY_label. FILTER(LANG(?COUNTRY_label) = "en")
@@ -229,6 +241,13 @@ document.addEventListener('DOMContentLoaded', () => {
                 OPTIONAL {?wikipedia_url schema:about ?WIKIDATA; schema:inLanguage "en"; schema:isPartOf <https://en.wikipedia.org/>.}
                 OPTIONAL {?WIKIDATA wdt:P452 ?SECTOR. ?SECTOR rdfs:label ?SECTOR_label. FILTER(LANG(?SECTOR_label) = "en")}
                 OPTIONAL {?WIKIDATA wdt:P159 ?HEADQUARTERS. ?HEADQUARTERS rdfs:label ?HEADQUARTERS_label. FILTER(LANG(?HEADQUARTERS_label) = "en")}
+                OPTIONAL {?WIKIDATA wdt:P1454 ?legal_form. ?legal_form rdfs:label ?legal_form_label. FILTER(LANG(?legal_form_label) = "en")}
+                OPTIONAL {?WIKIDATA wdt:P112 ?founder. ?founder rdfs:label ?founder_label. FILTER(LANG(?founder_label) = "en")}
+                OPTIONAL {?WIKIDATA wdt:P138 ?named_after. ?named_after rdfs:label ?named_after_label. FILTER(LANG(?named_after_label) = "en")}
+                OPTIONAL {?WIKIDATA wdt:P1451 ?slogan. FILTER(LANG(?slogan) = "en")}
+                OPTIONAL {?WIKIDATA wdt:P1128 ?employees_count.}
+                OPTIONAL {?WIKIDATA wdt:P1365 ?replaces. ?replaces rdfs:label ?replaces_label. FILTER(LANG(?replaces_label) = "en")}
+                OPTIONAL {?WIKIDATA wdt:P1366 ?replaced_by. ?replaced_by rdfs:label ?replaced_by_label. FILTER(LANG(?replaced_by_label) = "en")}
             } GROUP BY ?WIKIDATA`;
     }
 
@@ -258,17 +277,49 @@ document.addEventListener('DOMContentLoaded', () => {
             OPTIONAL {?WIKIDATA wdt:P1056 ?PRODUCT. ?PRODUCT rdfs:label ?PRODUCT_label. FILTER(LANG(?PRODUCT_label) = "en")}
         } GROUP BY ?WIKIDATA`;
     }
-    function getSocialQuery(wikidataId) { /* Unchanged */ 
-        return `SELECT (SAMPLE(?official_website) AS ?OFFICIAL_WEBSITE) (SAMPLE(?logo_image) AS ?LOGO_IMAGE) (GROUP_CONCAT(DISTINCT ?twitter_username; separator=", ") AS ?TWITTER_HANDLES) (GROUP_CONCAT(DISTINCT ?linkedin_id; separator=", ") AS ?LINKEDIN_IDS) WHERE {
+    function getSocialQuery(wikidataId) {
+        return `SELECT
+            (SAMPLE(?official_website) AS ?OFFICIAL_WEBSITE)
+            (SAMPLE(?logo_image) AS ?LOGO_IMAGE)
+            (GROUP_CONCAT(DISTINCT ?twitter_username; separator=", ") AS ?TWITTER_HANDLES)
+            (GROUP_CONCAT(DISTINCT ?linkedin_id; separator=", ") AS ?LINKEDIN_IDS)
+            (GROUP_CONCAT(DISTINCT ?facebook_id; separator=", ") AS ?FACEBOOK_IDS)
+            (GROUP_CONCAT(DISTINCT ?instagram_username; separator=", ") AS ?INSTAGRAM_HANDLES)
+            (GROUP_CONCAT(DISTINCT ?youtube_channel; separator=", ") AS ?YOUTUBE_CHANNELS)
+            (GROUP_CONCAT(DISTINCT ?github_username; separator=", ") AS ?GITHUB_USERNAMES)
+            (SAMPLE(?crunchbase_profile) AS ?CRUNCHBASE_PROFILE)
+            (SAMPLE(?bloomberg_id) AS ?BLOOMBERG_ID)
+            WHERE {
             VALUES ?WIKIDATA { wd:${wikidataId} }
             OPTIONAL {?WIKIDATA wdt:P856 ?official_website.}
             OPTIONAL {?WIKIDATA wdt:P154 ?logo_image.}
             OPTIONAL {?WIKIDATA wdt:P2002 ?twitter_username.}
             OPTIONAL {?WIKIDATA wdt:P4264 ?linkedin_id.}
+            OPTIONAL {?WIKIDATA wdt:P2013 ?facebook_id.}
+            OPTIONAL {?WIKIDATA wdt:P2003 ?instagram_username.}
+            OPTIONAL {?WIKIDATA wdt:P2397 ?youtube_channel.}
+            OPTIONAL {?WIKIDATA wdt:P2037 ?github_username.}
+            OPTIONAL {?WIKIDATA wdt:P2088 ?crunchbase_profile.}
+            OPTIONAL {?WIKIDATA wdt:P3052 ?bloomberg_id.}
         } GROUP BY ?WIKIDATA`;
     }
 
-    function getFinancialHistoryQuery(wikidataId) { /* Unchanged */
+    function getStockInfoQuery(wikidataId) {
+        return `SELECT
+            (GROUP_CONCAT(DISTINCT ?stock_exchange_label; separator=", ") AS ?STOCK_EXCHANGES)
+            (GROUP_CONCAT(DISTINCT ?ticker_symbol; separator=", ") AS ?TICKER_SYMBOLS)
+            (GROUP_CONCAT(DISTINCT ?isin; separator=", ") AS ?ISIN_CODES)
+            (SAMPLE(?sec_cik) AS ?SEC_CIK_NUMBER)
+            WHERE {
+            VALUES ?WIKIDATA { wd:${wikidataId} }
+            OPTIONAL {?WIKIDATA wdt:P414 ?stock_exchange. ?stock_exchange rdfs:label ?stock_exchange_label. FILTER(LANG(?stock_exchange_label) = "en")}
+            OPTIONAL {?WIKIDATA wdt:P249 ?ticker_symbol.}
+            OPTIONAL {?WIKIDATA wdt:P946 ?isin.}
+            OPTIONAL {?WIKIDATA wdt:P5531 ?sec_cik.}
+        } GROUP BY ?WIKIDATA`;
+    }
+
+    function getFinancialHistoryQuery(wikidataId) {
         return `SELECT ?metric_label ?value (SAMPLE(?date) AS ?date) WHERE {
             VALUES ?WIKIDATA { wd:${wikidataId} }
             {
@@ -283,8 +334,35 @@ document.addEventListener('DOMContentLoaded', () => {
               ?WIKIDATA p:P2295 ?statement. BIND("Net Income" AS ?metric_label)
               ?statement ps:P2295 ?value.
               OPTIONAL { ?statement pq:P585 ?date. }
+            } UNION {
+              ?WIKIDATA p:P3362 ?statement. BIND("Operating Income" AS ?metric_label)
+              ?statement ps:P3362 ?value.
+              OPTIONAL { ?statement pq:P585 ?date. }
+            } UNION {
+              ?WIKIDATA p:P2403 ?statement. BIND("Total Assets" AS ?metric_label)
+              ?statement ps:P2403 ?value.
+              OPTIONAL { ?statement pq:P585 ?date. }
+            } UNION {
+              ?WIKIDATA p:P2138 ?statement. BIND("Total Equity" AS ?metric_label)
+              ?statement ps:P2138 ?value.
+              OPTIONAL { ?statement pq:P585 ?date. }
+            } UNION {
+              ?WIKIDATA p:P1128 ?statement. BIND("Employees" AS ?metric_label)
+              ?statement ps:P1128 ?value.
+              OPTIONAL { ?statement pq:P585 ?date. }
             }
         } GROUP BY ?metric_label ?value ?date ORDER BY DESC(?date)`;
+    }
+
+    function getBrandsQuery(wikidataId) {
+        return `SELECT
+            (GROUP_CONCAT(DISTINCT ?brand_owned_label; separator=", ") AS ?BRANDS_OWNED)
+            (GROUP_CONCAT(DISTINCT ?parent_brand_label; separator=", ") AS ?PARENT_BRANDS)
+            WHERE {
+            VALUES ?WIKIDATA { wd:${wikidataId} }
+            OPTIONAL {?WIKIDATA wdt:P1830 ?brand_owned. ?brand_owned rdfs:label ?brand_owned_label. FILTER(LANG(?brand_owned_label) = "en")}
+            OPTIONAL {?WIKIDATA wdt:P8345 ?parent_brand. ?parent_brand rdfs:label ?parent_brand_label. FILTER(LANG(?parent_brand_label) = "en")}
+        } GROUP BY ?WIKIDATA`;
     }
 
     function renderResults(data, companyLabel) {
@@ -298,11 +376,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const tbody = document.createElement('tbody');
         
         const fieldOrder = [
-            'COMPANY_label', 'SECTORS', 'WIKIPEDIA_URL', 'WIKIDATA', 'COUNTRY_label', 'HEADQUARTERS', 'INCEPTION_DATE',
+            'COMPANY_label', 'SECTORS', 'LEGAL_FORM', 'FOUNDED_BY', 'NAMED_AFTER', 'SLOGAN',
+            'WIKIPEDIA_URL', 'WIKIDATA', 'COUNTRY_label', 'HEADQUARTERS', 'INCEPTION_DATE',
+            'EMPLOYEES_COUNT', 'REPLACES', 'REPLACED_BY',
             'CEOS_HISTORY', 'BOARD_MEMBERS', 'OWNERS_HISTORY',
+            'STOCK_EXCHANGES', 'TICKER_SYMBOLS', 'ISIN_CODES', 'SEC_CIK_NUMBER',
             'FINANCIAL_HISTORY',
             'PARENT_ORGANIZATIONS', 'SUBSIDIARIES', 'PRODUCTS_SERVICES',
-            'OFFICIAL_WEBSITE', 'TWITTER_HANDLES', 'LINKEDIN_IDS', 'LOGO_IMAGE'
+            'BRANDS_OWNED', 'PARENT_BRANDS',
+            'OFFICIAL_WEBSITE', 'TWITTER_HANDLES', 'LINKEDIN_IDS', 'FACEBOOK_IDS',
+            'INSTAGRAM_HANDLES', 'YOUTUBE_CHANNELS', 'GITHUB_USERNAMES',
+            'CRUNCHBASE_PROFILE', 'BLOOMBERG_ID', 'LOGO_IMAGE'
         ];
 
         fieldOrder.forEach(key => {
@@ -320,10 +404,25 @@ document.addEventListener('DOMContentLoaded', () => {
                     const yearlyData = dataValue.reduce((acc, item) => {
                         const year = item.date ? new Date(item.date.value).getFullYear().toString() : '?';
                         if (!acc[year]) {
-                            acc[year] = { year: year, 'Market Cap': 'N/A', 'Net Income': 'N/A', 'Total Revenue': 'N/A' };
+                            acc[year] = {
+                                year: year,
+                                'Market Cap': 'N/A',
+                                'Total Revenue': 'N/A',
+                                'Net Income': 'N/A',
+                                'Operating Income': 'N/A',
+                                'Total Assets': 'N/A',
+                                'Total Equity': 'N/A',
+                                'Employees': 'N/A'
+                            };
                         }
-                        const formattedVal = `${(parseFloat(item.value.value) / 1_000_000_000).toFixed(1)}B`;
-                        acc[year][item.metric_label.value] = formattedVal;
+                        const metricLabel = item.metric_label.value;
+                        let formattedVal;
+                        if (metricLabel === 'Employees') {
+                            formattedVal = parseInt(item.value.value).toLocaleString();
+                        } else {
+                            formattedVal = `${(parseFloat(item.value.value) / 1_000_000_000).toFixed(1)}B`;
+                        }
+                        acc[year][metricLabel] = formattedVal;
                         return acc;
                     }, {});
 
@@ -331,7 +430,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
                     const nestedTable = document.createElement('table');
                     nestedTable.className = 'table table-sm table-bordered mb-0';
-                    nestedTable.innerHTML = `<thead><tr><th>Year</th><th>Market Cap</th><th>Total Revenue</th><th>Net Income</th></tr></thead>`;
+                    nestedTable.innerHTML = `<thead><tr>
+                        <th>Year</th>
+                        <th>Market Cap</th>
+                        <th>Total Revenue</th>
+                        <th>Operating Income</th>
+                        <th>Net Income</th>
+                        <th>Total Assets</th>
+                        <th>Total Equity</th>
+                        <th>Employees</th>
+                    </tr></thead>`;
                     const nestedTbody = document.createElement('tbody');
 
                     sortedYears.forEach(year => {
@@ -340,10 +448,14 @@ document.addEventListener('DOMContentLoaded', () => {
                             <td>${rowData.year}</td>
                             <td>${rowData['Market Cap']}</td>
                             <td>${rowData['Total Revenue']}</td>
+                            <td>${rowData['Operating Income']}</td>
                             <td>${rowData['Net Income']}</td>
+                            <td>${rowData['Total Assets']}</td>
+                            <td>${rowData['Total Equity']}</td>
+                            <td>${rowData['Employees']}</td>
                         </tr>`;
                     });
-                    
+
                     nestedTable.appendChild(nestedTbody);
                     valueCell.appendChild(nestedTable);
 
