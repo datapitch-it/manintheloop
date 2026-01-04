@@ -9,7 +9,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const resultsContainer = document.getElementById('results-container');
     const errorContainer = document.getElementById('error-container');
     const loader = document.getElementById('loader');
-    const mainTitle = document.getElementById('main-title'); 
+    const mainTitle = document.getElementById('main-title');
+
+    // --- Environment Detection ---
+    const isGitHubPages = window.location.hostname.includes('github.io');
+    const USE_PROXY = !isGitHubPages; // Use proxy only on localhost
 
     // --- State Management ---
     let debounceTimer;
@@ -124,9 +128,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function fetchWikidataAutocomplete(searchTerm) {
         try {
-            const response = await fetch(`http://localhost:3000/autocomplete?search=${encodeURIComponent(searchTerm)}`);
-            if (!response.ok) throw new Error('Autocomplete search failed');
-            const results = await response.json();
+            let results;
+            if (USE_PROXY) {
+                const response = await fetch(`http://localhost:3000/autocomplete?search=${encodeURIComponent(searchTerm)}`);
+                if (!response.ok) throw new Error('Autocomplete search failed');
+                results = await response.json();
+            } else {
+                // Direct Wikidata API call
+                const url = `https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&type=item&continue=0&search=${encodeURIComponent(searchTerm)}&origin=*`;
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Autocomplete search failed');
+                const data = await response.json();
+                results = data.search || [];
+            }
             
             autocompleteResults.innerHTML = '';
             results.forEach(item => {
@@ -213,9 +227,21 @@ document.addEventListener('DOMContentLoaded', () => {
 
     async function executeQuery(sparqlQuery) {
         if (!sparqlQuery) return { head: { vars: [] }, results: { bindings: [] } };
-        const endpointUrl = 'http://localhost:3000/wikidata-sparql';
-        const fullUrl = `${endpointUrl}?query=${encodeURIComponent(sparqlQuery)}`;
-        const response = await fetch(fullUrl, { headers: { 'Accept': 'application/sparql-results+json' }});
+
+        let fullUrl;
+        const headers = { 'Accept': 'application/sparql-results+json' };
+
+        if (USE_PROXY) {
+            const endpointUrl = 'http://localhost:3000/wikidata-sparql';
+            fullUrl = `${endpointUrl}?query=${encodeURIComponent(sparqlQuery)}`;
+        } else {
+            // Direct Wikidata SPARQL endpoint
+            const endpointUrl = 'https://query.wikidata.org/sparql';
+            fullUrl = `${endpointUrl}?query=${encodeURIComponent(sparqlQuery)}`;
+            headers['User-Agent'] = 'WikidataInspector/1.0';
+        }
+
+        const response = await fetch(fullUrl, { headers });
         if (!response.ok) {
             const errorText = await response.text();
             throw new Error(`SPARQL query failed: ${response.statusText} - ${errorText}`);
