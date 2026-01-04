@@ -6,7 +6,23 @@ const fetch = require('node-fetch');
 const app = express();
 const PORT = 3000;
 
-app.use(cors({ origin: 'http://localhost:8000' })); 
+// Allow requests from both localhost and GitHub Pages
+const allowedOrigins = [
+    'http://localhost:8000',
+    'https://datapitch-it.github.io'
+];
+
+app.use(cors({
+    origin: function (origin, callback) {
+        // Allow requests with no origin (like mobile apps or curl requests)
+        if (!origin) return callback(null, true);
+        if (allowedOrigins.indexOf(origin) === -1) {
+            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
+            return callback(new Error(msg), false);
+        }
+        return callback(null, true);
+    }
+})); 
 
 const userAgent = 'MyWikidataInspector/1.0 (https://github.com/user/my-repo; user@example.com)';
 
