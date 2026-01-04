@@ -19,64 +19,23 @@ document.addEventListener('DOMContentLoaded', () => {
     let debounceTimer;
     let localCompanyList = [];
 
-    // --- CSV Loading ---
-    function parseCSVLine(line) {
-        const result = [];
-        let current = '';
-        let inQuotes = false;
-
-        for (let i = 0; i < line.length; i++) {
-            const char = line[i];
-
-            if (char === '"') {
-                inQuotes = !inQuotes;
-            } else if (char === ',' && !inQuotes) {
-                result.push(current.trim());
-                current = '';
-            } else {
-                current += char;
-            }
-        }
-        result.push(current.trim());
-        return result;
-    }
-
-    async function loadCompaniesFromCSV() {
+    // --- JSON Loading ---
+    async function loadCompaniesFromJSON() {
         try {
-            const response = await fetch('data/companies_with_wikidata.csv');
-            if (!response.ok) throw new Error('Failed to load CSV file');
+            const response = await fetch('data/companies.json');
+            if (!response.ok) throw new Error('Failed to load companies file');
 
-            const csvText = await response.text();
-            const lines = csvText.trim().split('\n');
-
-            // Skip header row
-            const dataLines = lines.slice(1);
-
-            localCompanyList = dataLines
-                .map(line => {
-                    const [sector, company, wikipediaUrl, wikidataId] = parseCSVLine(line);
-
-                    // Filter out empty lines and companies without Wikidata IDs
-                    if (!company || !wikidataId || wikidataId.trim() === '') return null;
-
-                    return {
-                        id: wikidataId.trim(),
-                        label: company.trim(),
-                        description: sector ? sector.trim() : ''
-                    };
-                })
-                .filter(item => item !== null); // Remove null entries
-
+            localCompanyList = await response.json();
             renderLocalCompanyList();
         } catch (error) {
-            console.error('Error loading companies from CSV:', error);
+            console.error('Error loading companies from JSON:', error);
             showError('Failed to load company list. Please refresh the page.');
         }
     }
 
     // --- Initial Setup ---
     updateFavicon('default');
-    loadCompaniesFromCSV();
+    loadCompaniesFromJSON();
     // No dynamic title update yet, just original h1 content
 
 

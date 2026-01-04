@@ -1,57 +1,57 @@
 SECTOR,COMPANY,Wikipedia url,Wikidata
 Mining,Rio Tinto,https://en.wikipedia.org/wiki/Rio_Tinto_Group,Q821293
-Mining,BHP Group,https://en.wikipedia.org/wiki/BHP,
-Mining,Zijin Mining,https://en.wikipedia.org/wiki/Zijin_Mining,
-Mining,China Shenhua Energy,https://en.wikipedia.org/wiki/China_Shenhua_Energy,
-Mining,Southern Copper Corporation,https://en.wikipedia.org/wiki/Southern_Copper_Corporation,
-Mining,Newmont Corporation,https://en.wikipedia.org/wiki/Newmont_Corporation,
-Mining,Agnico Eagle Mines,https://en.wikipedia.org/wiki/Agnico_Eagle,
-Mining,Ma’aden (Saudi Arabian Mining Company),https://en.wikipedia.org/wiki/Ma'aden,
-Mining,Grupo México,https://en.wikipedia.org/wiki/Grupo_M%C3%A9xico,
-Mining,Vale S.A.,https://en.wikipedia.org/wiki/Vale_S.A.,
-Mining,Coal India,https://en.wikipedia.org/wiki/Coal_India,
-Mining,Fortescue Metals Group,https://en.wikipedia.org/wiki/Fortescue_Metals_Group,
+Mining,BHP Group,https://en.wikipedia.org/wiki/BHP,Q625713
+Mining,Zijin Mining,https://en.wikipedia.org/wiki/Zijin_Mining,Q202841
+Mining,China Shenhua Energy,https://en.wikipedia.org/wiki/China_Shenhua_Energy,Q1073509
+Mining,Southern Copper Corporation,https://en.wikipedia.org/wiki/Southern_Copper_Corporation,Q7569806
+Mining,Newmont Corporation,https://en.wikipedia.org/wiki/Newmont_Corporation,Q1785405
+Mining,Agnico Eagle Mines,https://en.wikipedia.org/wiki/Agnico_Eagle,Q38676
+Mining,Ma'aden (Saudi Arabian Mining Company),https://en.wikipedia.org/wiki/Maaden_(company),Q6721006
+Mining,Grupo México,https://en.wikipedia.org/wiki/Grupo_M%C3%A9xico,Q623591
+Mining,Vale S.A.,https://en.wikipedia.org/wiki/Vale_S.A.,Q583268
+Mining,Coal India,https://en.wikipedia.org/wiki/Coal_India,Q124976
+Mining,Fortescue Metals Group,https://en.wikipedia.org/wiki/Fortescue_Metals_Group,Q1438957
 Mining,Bayan Resources,https://en.wikipedia.org/wiki/Bayan_Resources,
-Mining,Barrick Gold,https://en.wikipedia.org/wiki/Barrick_Gold,
-Mining,Anglo American,https://en.wikipedia.org/wiki/Anglo_American_plc,
-Mining,Wheaton Precious Metals,https://en.wikipedia.org/wiki/Wheaton_Precious_Metals,
-Tech,Nvidia,https://en.wikipedia.org/wiki/Nvidia,
-Tech,Microsoft,https://en.wikipedia.org/wiki/Microsoft,
-Tech,Apple,https://en.wikipedia.org/wiki/Apple_Inc.,
-Tech,Alphabet (Google),https://en.wikipedia.org/wiki/Alphabet_Inc.,
-Tech,Amazon,https://en.wikipedia.org/wiki/Amazon_(company),
-Tech,Meta Platforms,https://en.wikipedia.org/wiki/Meta_Platforms,
-Tech,Broadcom,https://en.wikipedia.org/wiki/Broadcom_Inc.,
-Tech,TSMC,https://en.wikipedia.org/wiki/TSMC,
-Tech,Tesla,https://en.wikipedia.org/wiki/Tesla,_Inc.,
-Tech,Oracle,https://en.wikipedia.org/wiki/Oracle_Corporation,
-Tech,Netflix,https://en.wikipedia.org/wiki/Netflix,
-Tech,SAP,https://en.wikipedia.org/wiki/SAP,
-Tech,ASML,https://en.wikipedia.org/wiki/ASML_Holding,
-Tech,Samsung Electronics,https://en.wikipedia.org/wiki/Samsung_Electronics,
-Tech,IBM,https://en.wikipedia.org/wiki/IBM,
-Tech,Cisco Systems,https://en.wikipedia.org/wiki/Cisco,
-Tech,AMD,https://en.wikipedia.org/wiki/Advanced_Micro_Devices,
-Tech,Qualcomm,https://en.wikipedia.org/wiki/Qualcomm,
-Tech,Intel,https://en.wikipedia.org/wiki/Intel,
-Tech,Adobe,https://en.wikipedia.org/wiki/Adobe_Inc.,
-Defence,RTX (Raytheon Technologies),https://en.wikipedia.org/wiki/RTX_Corporation,
-Defence,Safran,https://en.wikipedia.org/wiki/Safran,
-Defence,Honeywell,https://en.wikipedia.org/wiki/Honeywell,
-Defence,Lockheed Martin,https://en.wikipedia.org/wiki/Lockheed_Martin,
-Defence,Rheinmetall,https://en.wikipedia.org/wiki/Rheinmetall,
-Defence,General Dynamics,https://en.wikipedia.org/wiki/General_Dynamics,
-Defence,Northrop Grumman,https://en.wikipedia.org/wiki/Northrop_Grumman,
-Defence,BAE Systems,https://en.wikipedia.org/wiki/BAE_Systems,
-Defence,Thales,https://en.wikipedia.org/wiki/Thales_Group,
-Defence,L3Harris Technologies,https://en.wikipedia.org/wiki/L3Harris_Technologies,
-Defence,Hindustan Aeronautics,https://en.wikipedia.org/wiki/Hindustan_Aeronautics,
-Defence,Leonardo,https://en.wikipedia.org/wiki/Leonardo_S.p.A.,
-Defence,Bharat Electronics,https://en.wikipedia.org/wiki/Bharat_Electronics,
-Defence,Saab AB,https://en.wikipedia.org/wiki/Saab_AB,
-Defence,Aselsan,https://en.wikipedia.org/wiki/Aselsan,
-Defence,AeroVironment,https://en.wikipedia.org/wiki/AeroVironment,
-Defence,Kratos Defense & Security Solutions,https://en.wikipedia.org/wiki/Kratos_Defense_%26_Security_Solutions,
-Defence,Hensoldt,https://en.wikipedia.org/wiki/Hensoldt,
-Defence,Huntington Ingalls Industries,https://en.wikipedia.org/wiki/Huntington_Ingalls_Industries,
-Defence,Indra Sistemas,https://en.wikipedia.org/wiki/Indra_Sistemas,
+Mining,Barrick Gold,https://en.wikipedia.org/wiki/Barrick_Gold,Q808908
+Mining,Anglo American,https://en.wikipedia.org/wiki/Anglo_American_plc,Q541451
+Mining,Wheaton Precious Metals,https://en.wikipedia.org/wiki/Wheaton_Precious_Metals,Q1747133
+Tech,Nvidia,https://en.wikipedia.org/wiki/Nvidia,Q182477
+Tech,Microsoft,https://en.wikipedia.org/wiki/Microsoft,Q2283
+Tech,Apple,https://en.wikipedia.org/wiki/Apple_Inc.,Q312
+Tech,Alphabet (Google),https://en.wikipedia.org/wiki/Alphabet_Inc.,Q20800404
+Tech,Amazon,https://en.wikipedia.org/wiki/Amazon_(company),Q3884
+Tech,Meta Platforms,https://en.wikipedia.org/wiki/Meta_Platforms,Q380
+Tech,Broadcom,https://en.wikipedia.org/wiki/Broadcom_Inc.,Q790060
+Tech,TSMC,https://en.wikipedia.org/wiki/TSMC,Q713418
+Tech,Tesla,"https://en.wikipedia.org/wiki/Tesla,_Inc.",Q478214
+Tech,Oracle,https://en.wikipedia.org/wiki/Oracle_Corporation,Q19900
+Tech,Netflix,https://en.wikipedia.org/wiki/Netflix,Q907311
+Tech,SAP,https://en.wikipedia.org/wiki/SAP,Q552581
+Tech,ASML,https://en.wikipedia.org/wiki/ASML_Holding,Q297879
+Tech,Samsung Electronics,https://en.wikipedia.org/wiki/Samsung_Electronics,Q20718
+Tech,IBM,https://en.wikipedia.org/wiki/IBM,Q37156
+Tech,Cisco Systems,https://en.wikipedia.org/wiki/Cisco,Q173395
+Tech,AMD,https://en.wikipedia.org/wiki/Advanced_Micro_Devices,Q128896
+Tech,Qualcomm,https://en.wikipedia.org/wiki/Qualcomm,Q544847
+Tech,Intel,https://en.wikipedia.org/wiki/Intel,Q248
+Tech,Adobe,https://en.wikipedia.org/wiki/Adobe_Inc.,Q11463
+Defence,RTX (Raytheon Technologies),https://en.wikipedia.org/wiki/RTX_Corporation,Q89368734
+Defence,Safran,https://en.wikipedia.org/wiki/Safran,Q1886126
+Defence,Honeywell,https://en.wikipedia.org/wiki/Honeywell,Q898208
+Defence,Lockheed Martin,https://en.wikipedia.org/wiki/Lockheed_Martin,Q7240
+Defence,Rheinmetall,https://en.wikipedia.org/wiki/Rheinmetall,Q161544
+Defence,General Dynamics,https://en.wikipedia.org/wiki/General_Dynamics,Q502940
+Defence,Northrop Grumman,https://en.wikipedia.org/wiki/Northrop_Grumman,Q329953
+Defence,BAE Systems,https://en.wikipedia.org/wiki/BAE_Systems,Q739416
+Defence,Thales,https://en.wikipedia.org/wiki/Thales_Group,Q1161666
+Defence,L3Harris Technologies,https://en.wikipedia.org/wiki/L3Harris_Technologies,Q30291091
+Defence,Hindustan Aeronautics,https://en.wikipedia.org/wiki/Hindustan_Aeronautics,Q357095
+Defence,Leonardo,https://en.wikipedia.org/wiki/Leonardo_S.p.A.,Q910379
+Defence,Bharat Electronics,https://en.wikipedia.org/wiki/Bharat_Electronics,Q3630918
+Defence,Saab AB,https://en.wikipedia.org/wiki/Saab_AB,Q219501
+Defence,Aselsan,https://en.wikipedia.org/wiki/Aselsan,Q297600
+Defence,AeroVironment,https://en.wikipedia.org/wiki/AeroVironment,Q919300
+Defence,Kratos Defense & Security Solutions,https://en.wikipedia.org/wiki/Kratos_Defense_%26_Security_Solutions,Q16858667
+Defence,Hensoldt,https://en.wikipedia.org/wiki/Hensoldt,Q21236526
+Defence,Huntington Ingalls Industries,https://en.wikipedia.org/wiki/Huntington_Ingalls_Industries,Q7257522
+Defence,Indra Sistemas,https://en.wikipedia.org/wiki/Indra_Sistemas,Q1661823

@@ -1,0 +1,277 @@
+[
+  {
+    "id": "Q821293",
+    "label": "Rio Tinto",
+    "description": "Mining"
+  },
+  {
+    "id": "Q625713",
+    "label": "BHP Group",
+    "description": "Mining"
+  },
+  {
+    "id": "Q202841",
+    "label": "Zijin Mining",
+    "description": "Mining"
+  },
+  {
+    "id": "Q1073509",
+    "label": "China Shenhua Energy",
+    "description": "Mining"
+  },
+  {
+    "id": "Q7569806",
+    "label": "Southern Copper Corporation",
+    "description": "Mining"
+  },
+  {
+    "id": "Q1785405",
+    "label": "Newmont Corporation",
+    "description": "Mining"
+  },
+  {
+    "id": "Q38676",
+    "label": "Agnico Eagle Mines",
+    "description": "Mining"
+  },
+  {
+    "id": "Q6721006",
+    "label": "Ma'aden (Saudi Arabian Mining Company)",
+    "description": "Mining"
+  },
+  {
+    "id": "Q623591",
+    "label": "Grupo México",
+    "description": "Mining"
+  },
+  {
+    "id": "Q583268",
+    "label": "Vale S.A.",
+    "description": "Mining"
+  },
+  {
+    "id": "Q124976",
+    "label": "Coal India",
+    "description": "Mining"
+  },
+  {
+    "id": "Q1438957",
+    "label": "Fortescue Metals Group",
+    "description": "Mining"
+  },
+  {
+    "id": "Q808908",
+    "label": "Barrick Gold",
+    "description": "Mining"
+  },
+  {
+    "id": "Q541451",
+    "label": "Anglo American",
+    "description": "Mining"
+  },
+  {
+    "id": "Q1747133",
+    "label": "Wheaton Precious Metals",
+    "description": "Mining"
+  },
+  {
+    "id": "Q182477",
+    "label": "Nvidia",
+    "description": "Tech"
+  },
+  {
+    "id": "Q2283",
+    "label": "Microsoft",
+    "description": "Tech"
+  },
+  {
+    "id": "Q312",
+    "label": "Apple",
+    "description": "Tech"
+  },
+  {
+    "id": "Q20800404",
+    "label": "Alphabet (Google)",
+    "description": "Tech"
+  },
+  {
+    "id": "Q3884",
+    "label": "Amazon",
+    "description": "Tech"
+  },
+  {
+    "id": "Q380",
+    "label": "Meta Platforms",
+    "description": "Tech"
+  },
+  {
+    "id": "Q790060",
+    "label": "Broadcom",
+    "description": "Tech"
+  },
+  {
+    "id": "Q713418",
+    "label": "TSMC",
+    "description": "Tech"
+  },
+  {
+    "id": "Q478214",
+    "label": "Tesla",
+    "description": "Tech"
+  },
+  {
+    "id": "Q19900",
+    "label": "Oracle",
+    "description": "Tech"
+  },
+  {
+    "id": "Q907311",
+    "label": "Netflix",
+    "description": "Tech"
+  },
+  {
+    "id": "Q552581",
+    "label": "SAP",
+    "description": "Tech"
+  },
+  {
+    "id": "Q297879",
+    "label": "ASML",
+    "description": "Tech"
+  },
+  {
+    "id": "Q20718",
+    "label": "Samsung Electronics",
+    "description": "Tech"
+  },
+  {
+    "id": "Q37156",
+    "label": "IBM",
+    "description": "Tech"
+  },
+  {
+    "id": "Q173395",
+    "label": "Cisco Systems",
+    "description": "Tech"
+  },
+  {
+    "id": "Q128896",
+    "label": "AMD",
+    "description": "Tech"
+  },
+  {
+    "id": "Q544847",
+    "label": "Qualcomm",
+    "description": "Tech"
+  },
+  {
+    "id": "Q248",
+    "label": "Intel",
+    "description": "Tech"
+  },
+  {
+    "id": "Q11463",
+    "label": "Adobe",
+    "description": "Tech"
+  },
+  {
+    "id": "Q89368734",
+    "label": "RTX (Raytheon Technologies)",
+    "description": "Defence"
+  },
+  {
+    "id": "Q1886126",
+    "label": "Safran",
+    "description": "Defence"
+  },
+  {
+    "id": "Q898208",
+    "label": "Honeywell",
+    "description": "Defence"
+  },
+  {
+    "id": "Q7240",
+    "label": "Lockheed Martin",
+    "description": "Defence"
+  },
+  {
+    "id": "Q161544",
+    "label": "Rheinmetall",
+    "description": "Defence"
+  },
+  {
+    "id": "Q502940",
+    "label": "General Dynamics",
+    "description": "Defence"
+  },
+  {
+    "id": "Q329953",
+    "label": "Northrop Grumman",
+    "description": "Defence"
+  },
+  {
+    "id": "Q739416",
+    "label": "BAE Systems",
+    "description": "Defence"
+  },
+  {
+    "id": "Q1161666",
+    "label": "Thales",
+    "description": "Defence"
+  },
+  {
+    "id": "Q30291091",
+    "label": "L3Harris Technologies",
+    "description": "Defence"
+  },
+  {
+    "id": "Q357095",
+    "label": "Hindustan Aeronautics",
+    "description": "Defence"
+  },
+  {
+    "id": "Q910379",
+    "label": "Leonardo",
+    "description": "Defence"
+  },
+  {
+    "id": "Q3630918",
+    "label": "Bharat Electronics",
+    "description": "Defence"
+  },
+  {
+    "id": "Q219501",
+    "label": "Saab AB",
+    "description": "Defence"
+  },
+  {
+    "id": "Q297600",
+    "label": "Aselsan",
+    "description": "Defence"
+  },
+  {
+    "id": "Q919300",
+    "label": "AeroVironment",
+    "description": "Defence"
+  },
+  {
+    "id": "Q16858667",
+    "label": "Kratos Defense & Security Solutions",
+    "description": "Defence"
+  },
+  {
+    "id": "Q21236526",
+    "label": "Hensoldt",
+    "description": "Defence"
+  },
+  {
+    "id": "Q7257522",
+    "label": "Huntington Ingalls Industries",
+    "description": "Defence"
+  },
+  {
+    "id": "Q1661823",
+    "label": "Indra Sistemas",
+    "description": "Defence"
+  }
+]

@@ -21,7 +21,7 @@ def get_wikidata_id(url):
     return None
 
 def main():
-    df = pd.read_csv('data/companies_with_wikidata.csv')
+    df = pd.read_csv('data/companies.csv')
     for index, row in df.iterrows():
         if pd.isna(row['Wikidata']) or row['Wikidata'] == '':
             print(f"Getting Wikidata ID for {row['COMPANY']}...")
@@ -29,8 +29,8 @@ def main():
             if wikidata_id:
                 df.loc[index, 'Wikidata'] = wikidata_id
                 print(f"Found Wikidata ID: {wikidata_id}")
-    df.to_csv('data/companies_with_wikidata.csv', index=False)
-    print("Finished getting Wikidata IDs. The results are in data/companies_with_wikidata.csv")
+    df.to_csv('data/companies.csv', index=False)
+    print("Finished getting Wikidata IDs. The results are in data/companies.csv")
 
 if __name__ == '__main__':
     main()
