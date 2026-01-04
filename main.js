@@ -217,6 +217,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function getCoreInfoQuery(wikidataId) {
         return `SELECT ?WIKIDATA
             (SAMPLE(?COMPANY_label) AS ?COMPANY_label)
+            (SAMPLE(?description) AS ?DESCRIPTION)
             (SAMPLE(?COUNTRY_label) AS ?COUNTRY_label)
             (SAMPLE(?wikipedia_url) AS ?WIKIPEDIA_URL)
             (SAMPLE(?inception_date) AS ?INCEPTION_DATE)
@@ -233,6 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 VALUES ?WIKIDATA { wd:${wikidataId} }
                 ?WIKIDATA rdfs:label ?COMPANY_label. FILTER(LANG(?COMPANY_label) = "en")
 
+                OPTIONAL {?WIKIDATA schema:description ?description. FILTER(LANG(?description) = "en")}
                 OPTIONAL {
                     ?WIKIDATA wdt:P17 ?COUNTRY.
                     ?COUNTRY rdfs:label ?COUNTRY_label. FILTER(LANG(?COUNTRY_label) = "en")
@@ -376,7 +378,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const tbody = document.createElement('tbody');
         
         const fieldOrder = [
-            'COMPANY_label', 'SECTORS', 'LEGAL_FORM', 'FOUNDED_BY', 'NAMED_AFTER', 'SLOGAN',
+            'COMPANY_label', 'DESCRIPTION', 'SECTORS', 'LEGAL_FORM', 'FOUNDED_BY', 'NAMED_AFTER', 'SLOGAN',
             'WIKIPEDIA_URL', 'WIKIDATA', 'COUNTRY_label', 'HEADQUARTERS', 'INCEPTION_DATE',
             'EMPLOYEES_COUNT', 'REPLACES', 'REPLACED_BY',
             'CEOS_HISTORY', 'BOARD_MEMBERS', 'OWNERS_HISTORY',
