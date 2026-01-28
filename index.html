@@ -46,10 +46,23 @@
                     <label class="form-check-label" for="search-mode-toggle">Enable full Wikidata search</label>
                 </div>
 
-                <!-- Local Company List (Default) -->
-                <div id="company-list-container" class="scrollable-col">
-                    <div id="local-company-list" class="list-group">
-                        <!-- JS will populate this -->
+                <!-- Local Navigation (Filter + List) -->
+                <div id="local-nav-container">
+                    <!-- Country Filter -->
+                    <div id="country-filter-container" class="mb-3">
+                        <h6>Filter by Country</h6>
+                        <div id="country-list" class="list-group list-group-flush small scrollable-col" style="max-height: 200px;">
+                            <!-- JS will populate this -->
+                        </div>
+                    </div>
+
+                    <hr>
+
+                    <!-- Local Company List -->
+                    <div id="company-list-container" class="scrollable-col">
+                        <div id="local-company-list" class="list-group">
+                            <!-- JS will populate this -->
+                        </div>
                     </div>
                 </div>
 

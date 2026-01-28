@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const searchModeToggle = document.getElementById('search-mode-toggle');
     const companyListContainer = document.getElementById('company-list-container');
     const localCompanyListEl = document.getElementById('local-company-list');
+    const countryListEl = document.getElementById('country-list');
     const liveSearchContainer = document.getElementById('live-search-container');
     const autocompleteResults = document.getElementById('autocomplete-results');
     const resultsContainer = document.getElementById('results-container');
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- State Management ---
     let debounceTimer;
     let localCompanyList = [];
+    let selectedCountry = null;
 
     // --- JSON Loading ---
     async function loadCompaniesFromJSON() {
@@ -28,6 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
             localCompanyList = await response.json();
             // Sort A-Z ascending by label
             localCompanyList.sort((a, b) => a.label.localeCompare(b.label));
+            
+            renderCountryFilter();
             renderLocalCompanyList();
         } catch (error) {
             console.error('Error loading companies from JSON:', error);
@@ -44,7 +48,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Event Listeners ---
     searchModeToggle.addEventListener('change', (e) => {
         const isWikidataMode = e.target.checked;
-        companyListContainer.classList.toggle('d-none', isWikidataMode);
+        document.getElementById('local-nav-container').classList.toggle('d-none', isWikidataMode);
         liveSearchContainer.classList.toggle('d-none', !isWikidataMode);
         clearAll();
     });
@@ -67,9 +71,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     // --- Main Functions ---
+    function renderCountryFilter() {
+        const countryCounts = localCompanyList.reduce((acc, company) => {
+            const country = company.country || 'Unknown';
+            acc[country] = (acc[country] || 0) + 1;
+            return acc;
+        }, {});
+
+        const sortedCountries = Object.entries(countryCounts).sort((a, b) => b[1] - a[1]);
+
+        countryListEl.innerHTML = '';
+        
+        // "All" Option
+        const allItem = document.createElement('a');
+        allItem.href = '#';
+        allItem.className = `list-group-item list-group-item-action ${!selectedCountry ? 'active' : ''}`;
+        allItem.textContent = `All (${localCompanyList.length})`;
+        allItem.addEventListener('click', (e) => {
+            e.preventDefault();
+            selectedCountry = null;
+            renderCountryFilter();
+            renderLocalCompanyList();
+        });
+        countryListEl.appendChild(allItem);
+
+        sortedCountries.forEach(([country, count]) => {
+            const item = document.createElement('a');
+            item.href = '#';
+            item.className = `list-group-item list-group-item-action ${selectedCountry === country ? 'active' : ''}`;
+            item.innerHTML = `${country} <span class="badge bg-secondary rounded-pill float-end">${count}</span>`;
+            item.addEventListener('click', (e) => {
+                e.preventDefault();
+                selectedCountry = country;
+                renderCountryFilter();
+                renderLocalCompanyList();
+            });
+            countryListEl.appendChild(item);
+        });
+    }
+
     function renderLocalCompanyList() {
         localCompanyListEl.innerHTML = '';
-        localCompanyList.forEach(item => {
+        const filteredList = selectedCountry 
+            ? localCompanyList.filter(c => c.country === selectedCountry)
+            : localCompanyList;
+
+        filteredList.forEach(item => {
             const itemElement = document.createElement('a');
             itemElement.href = '#';
             itemElement.className = 'list-group-item list-group-item-action';

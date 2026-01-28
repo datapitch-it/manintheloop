@@ -37,16 +37,101 @@ def get_wikidata_id_safe(name):
     
     return None
 
+def get_wikidata_countries(qids):
+    """
+    Fetch country labels for a list of QIDs in a single SPARQL query.
+    """
+    if not qids:
+        return {}
+    
+    qids_str = " ".join([f"wd:{q}" for q in qids])
+    query = f"""
+    SELECT ?item ?countryLabel WHERE {{
+      VALUES ?item {{ {qids_str} }}
+      ?item wdt:P17 ?country.
+      SERVICE wikibase:label {{ bd:serviceParam wikibase:language "en". }}
+    }}
+    """
+    url = "https://query.wikidata.org/sparql"
+    headers = {'User-Agent': 'ManintheloopSync/1.0', 'Accept': 'application/sparql-results+json'}
+    
+    countries = {}
+    try:
+        res = requests.get(url, params={'query': query}, headers=headers)
+        data = res.json()
+        for binding in data['results']['bindings']:
+            qid = binding['item']['value'].split('/')[-1]
+            label = binding['countryLabel']['value']
+            countries[qid] = label
+    except Exception as e:
+        print(f"  [!] Error fetching countries: {e}")
+    
+    return countries
+
+def normalize_country(name):
+    """
+    Unify country names (e.g., China, People's Republic of China, Cina -> China).
+    """
+    if not name or str(name).lower() == 'nan':
+        return "Unknown"
+    
+    name_clean = name.strip().lower()
+    
+    # China normalization
+    china_variants = ["china", "people's republic of china", "cina", "prc"]
+    if any(v == name_clean for v in china_variants) or "people's republic of china" in name_clean:
+        return "China"
+    
+    # USA normalization
+    usa_variants = ["united states", "usa", "united states of america", "u.s.a.", "u.s."]
+    if any(v == name_clean for v in usa_variants) or "united states of america" in name_clean:
+        return "United States"
+
+    # UK normalization
+    uk_variants = ["united kingdom", "uk", "u.k.", "great britain"]
+    if any(v == name_clean for v in uk_variants):
+        return "United Kingdom"
+
+    # Czechia normalization
+    czech_variants = ["czech republic", "czechia", "czech rep."]
+    if any(v == name_clean for v in czech_variants):
+        return "Czechia"
+    
+    # Taiwan normalization
+    taiwan_variants = ["taiwan", "republic of china", "taiwan, province of china"]
+    if any(v == name_clean for v in taiwan_variants):
+        return "Taiwan"
+
+    # Netherlands normalization
+    netherlands_variants = ["netherlands", "the netherlands", "kingdom of the netherlands"]
+    if any(v == name_clean for v in netherlands_variants):
+        return "Netherlands"
+
+    # UK normalization
+    uk_variants = ["united kingdom", "uk", "u.k.", "great britain"]
+    if any(v == name_clean for v in uk_variants):
+        return "United Kingdom"
+
+    # South Korea normalization
+    skorea_variants = ["south korea", "republic of korea", "korea, south", "korea (republic of)"]
+    if any(v == name_clean for v in skorea_variants):
+        return "South Korea"
+
+    # Russia normalization
+    russia_variants = ["russia", "russian federation"]
+    if any(v == name_clean for v in russia_variants):
+        return "Russia"
+        
+    return name.strip().title() # title() ensures 'France', not 'france' or 'FRANCE'
+
 def sync_anagrafica():
-    print("--- Starting Sync: CSV -> JSON ---")
+    print("--- Starting Sync: CSV -> JSON (with Wikidata Country Enrichment) ---")
     
     # 1. Load Source of Truth (CSV)
     if not os.path.exists(CSV_PATH):
         print(f"Error: {CSV_PATH} not found.")
         return
     
-    # Assuming CSV has column 'COMPANY' based on previous reads, but let's check headers
-    # Standardizing to what we saw in 'enrich_data.py': 'COMPANY', 'MAIN FOCUS', 'SECTOR'
     df_csv = pd.read_csv(CSV_PATH)
     print(f"Loaded {len(df_csv)} rows from CSV.")
 
@@ -56,75 +141,71 @@ def sync_anagrafica():
         with open(JSON_PATH, 'r') as f:
             try:
                 json_list = json.load(f)
-                # Map Label -> ID for quick lookup. 
-                # Note: This assumes Label is unique. If ID is unique, map ID -> Data.
-                # Strategy: We trust the CSV for the LIST of companies. 
-                # We use JSON to retrieve IDs for those companies if they exist.
                 for item in json_list:
                     existing_data[item['label']] = item
                 print(f"Loaded {len(json_list)} existing entries from JSON.")
             except json.JSONDecodeError:
                 print("Warning: JSON file corrupted or empty. Starting fresh.")
 
-    # 3. Merge & Enrich
-    new_json_list = []
+    # 3. Merge & Identify IDs to fetch countries for
+    temp_list = []
     seen_ids = set()
     
-    # Iterate exactly in the order of the CSV (Source of Truth)
     for index, row in df_csv.iterrows():
         company_name = str(row.get('COMPANY', '')).strip()
         if not company_name or company_name.lower() == 'nan':
             continue
             
         description = str(row.get('MAIN FOCUS', row.get('SECTOR', 'nan')))
+        csv_country = normalize_country(row.get('COUNTRY', 'Unknown'))
         
-        # Build the entry
         entry = {
             "id": None,
             "label": company_name,
-            "description": description
+            "description": description,
+            "country": csv_country # Default to normalized CSV, will be overridden by Wikidata
         }
 
-        # CHECK 1: Do we already have this company in our clean JSON?
         if company_name in existing_data:
-            cached_entry = existing_data[company_name]
-            entry['id'] = cached_entry['id']
+            entry['id'] = existing_data[company_name]['id']
         
-        # CHECK 2: Do we have it in the CSV itself?
         if (entry['id'] is None) and ('Wikidata' in row) and pd.notna(row['Wikidata']):
             wid = str(row['Wikidata']).strip()
             if wid.startswith('Q'):
                 entry['id'] = wid
 
-        # ACTION: If ID is still missing, Search.
         if entry['id'] is None:
-            print(f"Searching Wikidata ID for new entry: {company_name}")
+            print(f"Searching Wikidata ID for: {company_name}")
             found_id = get_wikidata_id_safe(company_name)
             if found_id:
                 entry['id'] = found_id
-                print(f"  -> Assigned {found_id}")
-                time.sleep(1) # Rate limit
-            else:
-                print(f"  -> No ID found.")
+                time.sleep(0.5)
         
-        # FINAL STEP: Check for uniqueness by ID before adding
-        if entry['id']:
-            if entry['id'] not in seen_ids:
-                new_json_list.append(entry)
-                seen_ids.add(entry['id'])
-            else:
-                print(f"  [Info] Skipping duplicate ID for '{company_name}' ({entry['id']})")
-        else:
-            # Skip entries without an ID
-            pass
+        if entry['id'] and entry['id'] not in seen_ids:
+            temp_list.append(entry)
+            seen_ids.add(entry['id'])
 
-    # 4. Save
-    # Sort A-Z ascending by label before saving
-    new_json_list.sort(key=lambda x: x['label'].lower())
-    
-    print(f"Saving {len(new_json_list)} companies to {JSON_PATH}...")
+    # 4. Batch Enrichment of Countries from Wikidata
+    print("Enriching countries from Wikidata...")
+    all_ids = [e['id'] for e in temp_list if e['id']]
+    # Split into chunks of 50 for SPARQL
+    chunk_size = 50
+    wikidata_countries = {}
+    for i in range(0, len(all_ids), chunk_size):
+        chunk = all_ids[i:i+chunk_size]
+        wikidata_countries.update(get_wikidata_countries(chunk))
+        time.sleep(1)
+
+    for entry in temp_list:
+        qid = entry['id']
+        if qid in wikidata_countries:
+            entry['country'] = normalize_country(wikidata_countries[qid])
+
+    # 5. Save
+    temp_list.sort(key=lambda x: x['label'].lower())
+    print(f"Saving {len(temp_list)} companies to {JSON_PATH}...")
     with open(JSON_PATH, 'w', encoding='utf-8') as f:
-        json.dump(new_json_list, f, indent=2, ensure_ascii=False)
+        json.dump(temp_list, f, indent=2, ensure_ascii=False)
     
     print("Sync complete.")
 
