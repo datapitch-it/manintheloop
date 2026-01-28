@@ -1,7 +1,7 @@
 SECTOR,COMPANY,COUNTRY,TAX ID,MAIN FOCUS,Wikidata,Wikipedia url,WikidataURL
 Mining,Rio Tinto,Australia / UK,96 004 458 404 (ABN),"Iron Ore, Aluminum, Copper, and Lithium.",Q821293,https://en.wikipedia.org/wiki/Rio_Tinto_Group,https://www.wikidata.org/wiki/Q821293
 Mining,BHP Group,Australia,49 004 028 077 (ABN),"Iron Ore, Copper, Coal, Nickel, and Potash.",Q625713,https://en.wikipedia.org/wiki/BHP,https://www.wikidata.org/wiki/Q625713
-Mining,Zijin Mining,China,91350000155042221X (USCC),"Copper, Gold, and Lithium (Lithium ""Argentina"").",Q202841,https://en.wikipedia.org/wiki/Zijin_Mining,https://www.wikidata.org/wiki/Q202841
+Mining,Zijin Mining,China,91350000155042221X (USCC),"Copper, Gold, and Lithium (Lithium ""Argentina"").",Q131141984,https://en.wikipedia.org/wiki/Zijin_Mining,https://www.wikidata.org/wiki/Q202841
 Mining,China Shenhua Energy,China,9111000071093333XJ (USCC),World's largest Coal mining company; Power.,Q1073509,https://en.wikipedia.org/wiki/China_Shenhua_Energy,https://www.wikidata.org/wiki/Q1073509
 Mining,Southern Copper Corporation,USA / Mexico,13-3849074 (EIN),One of the world's largest Copper producers.,Q7569806,https://en.wikipedia.org/wiki/Southern_Copper_Corporation,https://www.wikidata.org/wiki/Q7569806
 Mining,Newmont Corporation,USA,84-0263435 (EIN),World's largest Gold producer; Copper.,Q1785405,https://en.wikipedia.org/wiki/Newmont_Corporation,https://www.wikidata.org/wiki/Q1785405
@@ -15,26 +15,26 @@ Mining,Bayan Resources,Indonesia,02.433.110.0-091.000 (NPWP),High-calorie Coal m
 Mining,Barrick Gold,Canada,10042-6136-RT0001 (BN),Gold and Copper (Tier One mining assets).,Q808908,https://en.wikipedia.org/wiki/Barrick_Gold,https://www.wikidata.org/wiki/Q808908
 Mining,Anglo American,UK,GB 805 2374 88 (VAT),"Copper, Iron Ore, PGM (Platinum), Diamonds.",Q541451,https://en.wikipedia.org/wiki/Anglo_American_plc,https://www.wikidata.org/wiki/Q541451
 Mining,Wheaton Precious Metals,Canada,85117-2348-RT0001 (BN),Precious Metals Streaming (Gold and Silver).,Q1747133,https://en.wikipedia.org/wiki/Wheaton_Precious_Metals,https://www.wikidata.org/wiki/Q1747133
-Tech,Glencore,Switzerland,CHE-106.909.694 (Company Number),,Q182477,https://en.wikipedia.org/wiki/Nvidia,https://www.wikidata.org/wiki/Q182477
-Tech,Nvidia,United States,94-2741749 (EIN),,Q2283,https://en.wikipedia.org/wiki/Microsoft,https://www.wikidata.org/wiki/Q2283
-Tech,Microsoft,United States,91-1144442 (EIN),,Q312,https://en.wikipedia.org/wiki/Apple_Inc.,https://www.wikidata.org/wiki/Q312
-Tech,Apple,United States,94-2404110 (EIN),,Q20800404,https://en.wikipedia.org/wiki/Alphabet_Inc.,https://www.wikidata.org/wiki/Q20800404
-Tech,Alphabet (Google),United States,61-1767919 (EIN),,Q3884,https://en.wikipedia.org/wiki/Amazon_(company),https://www.wikidata.org/wiki/Q3884
-Tech,Amazon,United States,91-1646860 (EIN),,Q380,https://en.wikipedia.org/wiki/Meta_Platforms,https://www.wikidata.org/wiki/Q380
-Tech,Meta Platforms,United States,20-0075152 (EIN),,Q790060,https://en.wikipedia.org/wiki/Broadcom_Inc.,https://www.wikidata.org/wiki/Q790060
-Tech,Broadcom,United States,35-2617337 (EIN),,Q713418,https://en.wikipedia.org/wiki/TSMC,https://www.wikidata.org/wiki/Q713418
-Tech,TSMC,Taiwan,22099119 (Unified Business Number),,Q765530,https://en.wikipedia.org/wiki/Tesla,https://www.wikidata.org/wiki/Q765530
-Tech,Tesla,United States,91-2197729 (EIN),,Q19900,https://en.wikipedia.org/wiki/Oracle_Corporation,https://www.wikidata.org/wiki/Q19900
-Tech,Oracle,United States,94-2805249 (EIN),,Q907311,https://en.wikipedia.org/wiki/Netflix,https://www.wikidata.org/wiki/Q907311
-Tech,Netflix,United States,77-0467272 (EIN),,Q552581,https://en.wikipedia.org/wiki/SAP,https://www.wikidata.org/wiki/Q552581
-Tech,SAP,Germany,DE 143454214 (VAT),,Q297879,https://en.wikipedia.org/wiki/ASML_Holding,https://www.wikidata.org/wiki/Q297879
-Tech,ASML,Netherlands,NL 803511111B01 (VAT),,Q20718,https://en.wikipedia.org/wiki/Samsung_Electronics,https://www.wikidata.org/wiki/Q20718
-Tech,Samsung Electronics,South Korea,124-81-00998 (Business Registration Number),,Q37156,https://en.wikipedia.org/wiki/IBM,https://www.wikidata.org/wiki/Q37156
-Tech,IBM,United States,13-0871985 (EIN),,Q173395,https://en.wikipedia.org/wiki/Cisco,https://www.wikidata.org/wiki/Q173395
-Tech,Cisco Systems,United States,77-0059951 (EIN),,Q128896,https://en.wikipedia.org/wiki/Advanced_Micro_Devices,https://www.wikidata.org/wiki/Q128896
-Tech,AMD,United States,94-1692300 (EIN),,Q544847,https://en.wikipedia.org/wiki/Qualcomm,https://www.wikidata.org/wiki/Q544847
-Tech,Qualcomm,United States,95-3685934 (EIN),,Q248,https://en.wikipedia.org/wiki/Intel,https://www.wikidata.org/wiki/Q248
-Tech,Intel,United States,94-1672746 (EIN),,Q11463,https://en.wikipedia.org/wiki/Adobe_Inc.,https://www.wikidata.org/wiki/Q11463
+Tech,Glencore,Switzerland,CHE-106.909.694 (Company Number),,Q169339,https://en.wikipedia.org/wiki/Nvidia,https://www.wikidata.org/wiki/Q182477
+Tech,Nvidia,United States,94-2741749 (EIN),,Q182477,https://en.wikipedia.org/wiki/Microsoft,https://www.wikidata.org/wiki/Q2283
+Tech,Microsoft,United States,91-1144442 (EIN),,Q2283,https://en.wikipedia.org/wiki/Apple_Inc.,https://www.wikidata.org/wiki/Q312
+Tech,Apple,United States,94-2404110 (EIN),,Q312,https://en.wikipedia.org/wiki/Alphabet_Inc.,https://www.wikidata.org/wiki/Q20800404
+Tech,Alphabet (Google),United States,61-1767919 (EIN),,Q20800404,https://en.wikipedia.org/wiki/Amazon_(company),https://www.wikidata.org/wiki/Q3884
+Tech,Amazon,United States,91-1646860 (EIN),,Q3884,https://en.wikipedia.org/wiki/Meta_Platforms,https://www.wikidata.org/wiki/Q380
+Tech,Meta Platforms,United States,20-0075152 (EIN),,Q380,https://en.wikipedia.org/wiki/Broadcom_Inc.,https://www.wikidata.org/wiki/Q790060
+Tech,Broadcom,United States,35-2617337 (EIN),,Q483034,https://en.wikipedia.org/wiki/TSMC,https://www.wikidata.org/wiki/Q713418
+Tech,TSMC,Taiwan,22099119 (Unified Business Number),,Q713418,https://en.wikipedia.org/wiki/Tesla,https://www.wikidata.org/wiki/Q765530
+Tech,Tesla,United States,91-2197729 (EIN),,Q478214,https://en.wikipedia.org/wiki/Oracle_Corporation,https://www.wikidata.org/wiki/Q19900
+Tech,Oracle,United States,94-2805249 (EIN),,Q19900,https://en.wikipedia.org/wiki/Netflix,https://www.wikidata.org/wiki/Q907311
+Tech,Netflix,United States,77-0467272 (EIN),,Q907311,https://en.wikipedia.org/wiki/SAP,https://www.wikidata.org/wiki/Q552581
+Tech,SAP,Germany,DE 143454214 (VAT),,Q552581,https://en.wikipedia.org/wiki/ASML_Holding,https://www.wikidata.org/wiki/Q297879
+Tech,ASML,Netherlands,NL 803511111B01 (VAT),,Q297879,https://en.wikipedia.org/wiki/Samsung_Electronics,https://www.wikidata.org/wiki/Q20718
+Tech,Samsung Electronics,South Korea,124-81-00998 (Business Registration Number),,Q20718,https://en.wikipedia.org/wiki/IBM,https://www.wikidata.org/wiki/Q37156
+Tech,IBM,United States,13-0871985 (EIN),,Q37156,https://en.wikipedia.org/wiki/Cisco,https://www.wikidata.org/wiki/Q173395
+Tech,Cisco Systems,United States,77-0059951 (EIN),,Q173395,https://en.wikipedia.org/wiki/Advanced_Micro_Devices,https://www.wikidata.org/wiki/Q128896
+Tech,AMD,United States,94-1692300 (EIN),,Q128896,https://en.wikipedia.org/wiki/Qualcomm,https://www.wikidata.org/wiki/Q544847
+Tech,Qualcomm,United States,95-3685934 (EIN),,Q544847,https://en.wikipedia.org/wiki/Intel,https://www.wikidata.org/wiki/Q248
+Tech,Intel,United States,94-1672746 (EIN),,Q248,https://en.wikipedia.org/wiki/Adobe_Inc.,https://www.wikidata.org/wiki/Q11463
 Defence,RTX (Raytheon Technologies),USA,06-0570975,"Missile defense (Patriot), Aircraft engines (Pratt & Whitney), Avionics, and Intelligence systems.",Q89368734,https://en.wikipedia.org/wiki/RTX_Corporation,https://www.wikidata.org/wiki/Q89368734
 Defence,Safran SA,France,FR09562012257,Propulsion / Equipment,Q1886126,https://en.wikipedia.org/wiki/Safran,https://www.wikidata.org/wiki/Q1886126
 Defence,Honeywell,USA,22-2640650 (EIN),"Avionics, Aircraft Engines, Tactical Guidance, Building Automation.",Q898208,https://en.wikipedia.org/wiki/Honeywell,https://www.wikidata.org/wiki/Q898208
@@ -78,7 +78,7 @@ Defence,Czechoslovak Group,Czech Rep.,CZ03487042,Land Systems / Ammo,Q27350567,,
 Defence,PGZ (Polish Armaments),Poland,PL5252571253,National Defense,,,
 Defence,Nammo AS,Norway,NO979512328,Ammo / Rockets,Q1964355,,
 Defence,Elbit Systems,Israel,511051515,"UAVs (Hermes), Avionics, Land Systems, Cyber.",Q1325369,,
-Defence,Israel Aerospace Industries (IAI),Israel,520023611,"Missile Defense (Arrow), Satellites, Aviation MRO.",,,
+Defence,Israel Aerospace Industries (IAI),Israel,520023611,"Missile Defense (Arrow), Satellites, Aviation MRO.",Q876017,,
 Defence,Rafael Advanced Defense Systems,Israel,511252931,"Missile Systems (Iron Dome, Spike), Active Protection.",Q154610,,
 Defence,Israel Military Industries (IMI),Israel,520021672,"Munitions, Tank Armament, Small Arms.",,,
 Defence,Plasan,Israel,510931221,Survivability and Armored Vehicle protection.,Q744498,,
@@ -91,28 +91,28 @@ Defence,United Aircraft Corp (UAC),Russia,7708619320,"Sukhoi and MiG Fighter Jet
 Defence,Uralvagonzavod,Russia,6623029350,"Main Battle Tanks (T-90, T-14 Armata).",Q1762250,,
 Defence,United Shipbuilding Corp (USC),Russia,7805432655,Nuclear Submarines and Surface Vessels.,,,
 Defence,Tactical Missiles Corp (KTRV),Russia,5018078513,Precision-guided cruise and anti-ship missiles.,,,
-Defence,AVIC,China,91110000710935393L,"Military Aircraft (J-20, J-10), Transport, Engines.",,,
+Defence,AVIC,China,91110000100013381A (USCC),Aviation Industry Corporation of China,Q790835,,
 Defence,NORINCO,China,91110000100001046A,"Land Systems, Tanks, Artillery, Small Arms.",Q1538336,,
 Defence,CASIC,China,9111000010000102XG,"Missiles (HQ-9, DF-series), Space Tech, Radars.",Q10874081,,
-Defence,CASC,China,911100001000116630,"Strategic Missiles, Rockets, Satellite Systems.",,,
-Defence,CSSC,China,91310000717833182Y,"World's largest shipbuilder; Carriers, Subs, Frigates.",,,
+Defence,CASC,China,911100001000116630,"Strategic Missiles, Rockets, Satellite Systems.",Q1073145,,
+Defence,CSSC,China,91310000717833182Y,"World's largest shipbuilder; Carriers, Subs, Frigates.",Q1073512,,
 Mining,Albemarle Corp,USA,54-1692118 (EIN),Lithium,Q127074,,
 Mining,SQM,Chile,93.007.000-9 (RUT),Lithium,Q3067064,,
 Mining,Ganfeng Lithium,China,913605007191146603 (USCC),Lithium,Q10954805,,
-Mining,Tianqi Lithium,China,915109002063604028 (USCC),Lithium,,,
+Mining,Tianqi Lithium,China,915109002063604028 (USCC),Lithium,Q55635834,,
 Mining,Rio Tinto Lithium,Australia/UK,96 004 458 404 (ABN),Lithium,,,
 Mining,Mineral Resources,Australia,33 118 549 910 (ABN),Lithium,Q108541568,,
-Mining,Pilbara Minerals,Australia,44 675 885 515 (ABN),Lithium,,,
+Mining,Pilbara Minerals,Australia,44 675 885 515 (ABN),Lithium,Q56064089,,
 Mining,Sichuan Yahua,China,91510000727497163M (USCC),Lithium,,,
 Mining,Sigma Lithium,Brazil,16.482.121/0002-38 (CNPJ),Lithium,,,
-Mining,Liontown Resources,Australia,39 118 153 825 (ABN),Lithium,,,
+Mining,Liontown Resources,Australia,39 118 153 825 (ABN),Lithium,Q109625740,,
 Mining,Codelco,Cile,61.703.000-4 (RUT),Copper,Q1105695,,
 Mining,Freeport-McMoRan,USA,74-1325110 (EIN),Copper,Q1453620,,
 Mining,BHP Group,Australia,49 004 028 077 (ABN),Copper,Q625713,,
 Mining,Glencore,Svizzera,CHE-116.277.103 (VAT),Copper,Q169339,,
 Mining,Zijin Mining,Cina,91350000155042221X (USCC),Copper,Q131141984,,
 Mining,Southern Copper,USA/Perù,13-3849074 (EIN),Copper,Q7569806,,
-Mining,Rio Tinto,UK/Australia,96 004 458 404 (ABN),Copper,,,
+Mining,Rio Tinto,UK/Australia,96 004 458 404 (ABN),Copper,Q821293,,
 Mining,KGHM Polska Miedź,Polonia,PL6920000013 (VAT),Copper,Q1476710,,
 Mining,Anglo American,UK,GB 805 2374 88 (VAT),Copper,Q541451,,
 Mining,First Quantum,Canada,12613-2550-RT0001 (BN),Copper,Q1419532,,
@@ -124,30 +124,30 @@ Mining,Elkem ASA,Norvegia,NO911382008 (VAT),Silicon,Q1331615,,
 Mining,Ferroglobe,UK/Spagna,ESA15003666 (VAT),Silicon,Q125144368,,
 Mining,Xinte Energy,Cina,91650100670233066H (USCC),Silicon,Q124670171,,
 Mining,Hemlock Semiconductor,USA,38-1647413 (EIN),Silicon,Q5712288,,
-Mining,Hoshine Silicon,Cina,91330400782386349H (USCC),Silicon,,,
+Mining,Hoshine Silicon,Cina,91330400782386349H (USCC),Silicon,Q108003110,,
 Mining,Mitsubishi Materials,Giappone,7010001008767 (TID),Silicon,Q1423176,,
 Mining,China Northern Rare Earth,Cina,911502007014631349 (USCC),Neodimio,Q55697404,,
 Mining,MP Materials,USA,82-1327150 (EIN),Neodimio,Q105563992,,
 Mining,Lynas Rare Earths,Australia,27 009 066 648 (ABN),Neodimio,Q6708384,,
 Mining,China Minmetals,Cina,91110000101683015B (USCC),Neodimio,Q846839,,
-Mining,Shenghe Resources,Cina,91510000201889851F (USCC),Neodimio,,,
+Mining,Shenghe Resources,Cina,91510000201889851F (USCC),Neodimio,Q15916333,,
 Mining,Neo Performance Mat.,Canada,10003-8276-RT0001 (BN),Neodimio,,,
-Mining,Arafura Rare Earths,Australia,22 080 933 455 (ABN),Neodimio,,,
+Mining,Arafura Rare Earths,Australia,22 080 933 455 (ABN),Neodimio,Q16829889,,
 Mining,Chinalco Rare Earth,Cina,91110000710928925H (USCC),Neodimio,,,
-Mining,Iluka Resources,Australia,34 008 675 803 (ABN),Neodimio,,,
+Mining,Iluka Resources,Australia,34 008 675 803 (ABN),Neodimio,Q1117761,,
 Mining,Indian Rare Earths (IREL),India,33AAACI0124F1ZO (GSTIN),Neodimio,,,
 Mining,Chinalco (Gallium),Cina,91110000710928925H (USCC),Gallium,,,
-Mining,Vital Materials,Cina,91440101741873138N (USCC),Gallium,,,
-Mining,Dowa Holdings,Giappone,3010001037341 (TID),Gallium,,,
+Mining,Vital Materials,Cina,91440101741873138N (USCC),Gallium,Q121407257,,
+Mining,Dowa Holdings,Giappone,3010001037341 (TID),Gallium,Q5302643,,
 Mining,Umicore,Belgio,BE0401574852 (VAT),Gallium,Q107518759,,
-Mining,Recylex,Francia,FR53428751522 (VAT),Gallium,,,
+Mining,Recylex,Francia,FR53428751522 (VAT),Gallium,Q30292359,,
 Mining,Neo Performance (Gallium),Canada,10003-8276-RT0001 (BN),Gallium,,,
-Mining,American Elements,USA,95-4672725 (EIN),Gallium,,,
-Mining,Zhuzhou Smelter Group,Cina,9143020072255745XG (USCC),Gallium,,,
-Mining,Alcoa Corporation,USA,81-1153200 (EIN),Gallium,,,
-Mining,Indium Corporation,USA,15-0210510 (EIN),Gallium,,,
+Mining,American Elements,USA,95-4672725 (EIN),Gallium,Q4743673,,
+Mining,Zhuzhou Smelter Group,Cina,9143020072255745XG (USCC),Gallium,Q20063580,,
+Mining,Alcoa Corporation,USA,81-1153200 (EIN),Gallium,Q135325,,
+Mining,Indium Corporation,USA,15-0210510 (EIN),Gallium,Q16986090,,
 Mining,KoBold Metals Co.,USA,US 1907824,Use of AI to find metals,,,
 Defence,Amesys SAS,France,FR54 487754129,"formerly a subsidiary of the French group Bull SA. In 2012, its surveillance division (the ""Eagle"" system) was sold to Nexa Technologies",,,
 Defence,Nexa Technologies,France,FR31 750439374,"formed largely by former Amesys executives and took over the ""Eagle"" surveillance software. It has frequently operated in tandem with a Dubai-based entity called Advanced Middle East Systems",,,
-Defence,Eviden,France,FR74 433002011,"brand launched by the Atos Group in 2023 to house its ""Big Data and Security"" (BDS) activities, including what remains of the original Amesys business (now modernized into cybersecurity and high-performance computing)",,,
+Defence,Eviden,France,FR74 433002011,"brand launched by the Atos Group in 2023 to house its ""Big Data and Security"" (BDS) activities, including what remains of the original Amesys business (now modernized into cybersecurity and high-performance computing)",Q118322695,,
 Defence,Advanced Middle East Systems (AMES),EAU (Dubai),,"partner/distributor for Nexa Technologies in the Middle East and Africa, often cited in investigative reports as the vehicle used to sell the ""Eagle"" (and later ""Cerebro"") systems to regimes like Egypt",,,

@@ -26,6 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!response.ok) throw new Error('Failed to load companies file');
 
             localCompanyList = await response.json();
+            // Sort A-Z ascending by label
+            localCompanyList.sort((a, b) => a.label.localeCompare(b.label));
             renderLocalCompanyList();
         } catch (error) {
             console.error('Error loading companies from JSON:', error);
