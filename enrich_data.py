@@ -3,113 +3,93 @@ import requests
 import time
 import json
 import io
-import re
 
 CSV_URL = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSg4v9OkP8ZAmUQ_AOukHt8-_jjoiZR62_aeIvay9SqLv6GVxgnZbzT9hckXN0lq8WyHcxZ3smmGvsI/pub?gid=766453961&single=true&output=csv"
 
-def clean_name(name):
-    # Fix: Correctly escape parentheses in regex
-    name = re.sub(r'\(.*?\)', '', name)
-    return name.strip()
-
-def is_definitely_not_company(description, label):
-    if not description: return False
-    desc = description.lower()
+def is_company_on_wikidata(qid):
+    """
+    Verifies if a QID is an instance of a business, company, or similar.
+    P31 = Instance of
+    Q4830453 = business enterprise
+    Q783794 = company
+    Q6881511 = enterprise
+    """
+    if not qid or not qid.startswith('Q'): return False
     
-    # Blacklist for entities that often shadow companies
-    blacklist = [
-        'country', 'sovereign state', 'nation', 'republic', 'former country',
-        'city', 'municipality', 'village', 'human', 'person', 'born 19', 'born 20',
-        'chemical element', 'isotope', 'mythological', 'asteroid', 'comet', 'island'
-    ]
-    
-    if any(word in desc for word in blacklist):
-        return True
-    return False
-
-def is_likely_company(description, label, original_name):
-    if is_definitely_not_company(description, label):
+    url = f"https://www.wikidata.org/w/api.php?action=wbgetentities&ids={qid}&props=claims&format=json"
+    try:
+        res = requests.get(url, headers={'User-Agent': 'WikidataInspector/1.5'})
+        data = res.json()
+        claims = data.get('entities', {}).get(qid, {}).get('claims', {})
+        
+        # P31 is 'instance of'
+        p31 = claims.get('P31', [])
+        company_types = ['Q4830453', 'Q783794', 'Q6881511', 'Q43229', 'Q161227', 'Q2028343']
+        
+        for claim in p31:
+            val = claim.get('mainsnak', {}).get('datavalue', {}).get('value', {}).get('id')
+            if val in company_types:
+                return True
         return False
+    except:
+        return False
+
+def get_wikidata_id_safe(name):
+    # Special case for Czechoslovak Group
+    if "Czechoslovak Group" in name:
+        return "Q27350567"
         
-    desc = description.lower()
-    label_lower = label.lower()
-    orig_lower = original_name.lower()
-    
-    # Positive markers
-    if any(word in desc for word in ['company', 'enterprise', 'business', 'manufacturer', 'corporation', 'firm', 'subsidiary', 'industry', 'provider', 'holding', 'defense', 'mining', 'technology', 'group']):
-        return True
-        
-    # If the original name contains "Group" or "Ltd", it's a good sign if the label matches
-    if any(w in orig_lower for w in ['group', 'ltd', 'spa', 'corp']):
-        return True
-
-    return True
-
-def get_wikidata_id_strict(company_name, country=None):
-    base_url = "https://www.wikidata.org/w/api.php"
-    
-    search_queries = []
-    if country: search_queries.append(f"{company_name} {country}")
-    search_queries.append(company_name)
-    search_queries.append(f"{clean_name(company_name)} company")
-
-    headers = {'User-Agent': 'WikidataInspectorEnricher/1.4'}
-
-    for query in search_queries:
-        params = {
-            "action": "wbsearchentities",
-            "search": query,
-            "language": "en",
-            "format": "json",
-            "type": "item",
-            "limit": 10
-        }
-        
-        try:
-            response = requests.get(base_url, params=params, headers=headers)
-            if response.status_code == 200:
-                results = response.json().get('search', [])
-                for res in results:
-                    label = res.get('label', '')
-                    desc = res.get('description', '')
-                    
-                    if not is_definitely_not_company(desc, label):
-                        if is_likely_company(desc, label, company_name):
-                            return res['id']
-        except:
-            pass
+    url = "https://www.wikidata.org/w/api.php"
+    params = {
+        "action": "wbsearchentities",
+        "search": name,
+        "language": "en",
+        "format": "json",
+        "type": "item",
+        "limit": 5
+    }
+    try:
+        res = requests.get(url, params=params, headers={'User-Agent': 'WikidataInspector/1.5'})
+        results = res.json().get('search', [])
+        for r in results:
+            qid = r['id']
+            # Verify it's a company
+            if is_company_on_wikidata(qid):
+                return qid
+    except:
+        pass
     return None
 
 def main():
-    print(f"Downloading data and performing strict validation...")
-    try:
-        response = requests.get(CSV_URL)
-        df = pd.read_csv(io.StringIO(response.content.decode('utf-8')))
-    except:
-        df = pd.read_csv(CSV_URL)
+    print("Resetting data to original Google Sheets version...")
+    response = requests.get(CSV_URL)
+    df = pd.read_csv(io.StringIO(response.content.decode('utf-8')))
     
-    if 'Wikidata' not in df.columns: df['Wikidata'] = ''
+    # Track stats
+    original_ids = df['Wikidata'].notna().sum()
+    print(f"Original IDs preserved: {original_ids}")
 
+    count_added = 0
     for index, row in df.iterrows():
-        original_name = str(row['COMPANY'])
-        country = str(row.get('COUNTRY', '')) if pd.notna(row.get('COUNTRY')) else None
-        
-        new_id = get_wikidata_id_strict(original_name, country)
-        
-        if new_id:
-            df.at[index, 'Wikidata'] = new_id
-            print(f"Verified '{original_name}': {new_id}")
-        else:
-            print(f"COULD NOT VERIFY '{original_name}'")
-            df.at[index, 'Wikidata'] = ''
-        
-        time.sleep(0.05)
+        # Only try to find ID if it's missing
+        if pd.isna(row['Wikidata']) or str(row['Wikidata']).strip() == '' or str(row['Wikidata']) == 'nan':
+            name = row['COMPANY']
+            print(f"Searching for missing ID: {name}...", end="", flush=True)
+            new_id = get_wikidata_id_safe(name)
+            if new_id:
+                df.at[index, 'Wikidata'] = new_id
+                print(f" Found and verified: {new_id}")
+                count_added += 1
+            else:
+                print(" Not found or not a company.")
+            time.sleep(0.2)
 
+    # Final Save
     df.to_csv('data/companies.csv', index=False)
     
     app_data = []
-    enriched_df = df[df['Wikidata'].notna() & (df['Wikidata'].astype(str).str.strip() != '') & (df['Wikidata'].astype(str).str.strip() != 'nan')]
-    for _, row in enriched_df.iterrows():
+    final_df = df[df['Wikidata'].notna() & (df['Wikidata'].astype(str).str.strip() != '')]
+    for _, row in final_df.iterrows():
         app_data.append({
             'id': str(row['Wikidata']).strip(),
             'label': row['COMPANY'],
@@ -119,7 +99,8 @@ def main():
     with open('data/companies.json', 'w', encoding='utf-8') as f:
         json.dump(app_data, f, indent=2, ensure_ascii=False)
     
-    print(f"\nDone! App now has {len(app_data)} verified companies.")
+    print(f"\nRestoration complete! App now has {len(app_data)} companies.")
+    print(f"({original_ids} original + {count_added} new verified)")
 
 if __name__ == '__main__':
     main()
