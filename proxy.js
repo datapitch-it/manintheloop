@@ -6,25 +6,24 @@ const fetch = require('node-fetch');
 const app = express();
 const PORT = 3000;
 
-// Allow requests from both localhost and GitHub Pages
-const allowedOrigins = [
-    'http://localhost:8000',
-    'https://datapitch-it.github.io'
-];
-
+// Dynamic CORS to allow any localhost port or specific production domains
 app.use(cors({
     origin: function (origin, callback) {
-        // Allow requests with no origin (like mobile apps or curl requests)
         if (!origin) return callback(null, true);
-        if (allowedOrigins.indexOf(origin) === -1) {
-            const msg = 'The CORS policy for this site does not allow access from the specified Origin.';
-            return callback(new Error(msg), false);
+        
+        const isLocalhost = origin.startsWith('http://localhost:') || origin.startsWith('http://127.0.0.1:');
+        const allowedOrigins = ['https://datapitch-it.github.io'];
+        
+        if (isLocalhost || allowedOrigins.includes(origin)) {
+            return callback(null, true);
+        } else {
+            console.log("CORS blocked for origin:", origin);
+            return callback(new Error('Not allowed by CORS'), false);
         }
-        return callback(null, true);
     }
 })); 
 
-const userAgent = 'MyWikidataInspector/1.0 (https://github.com/user/my-repo; user@example.com)';
+const userAgent = 'WikidataInspector/1.1 (https://github.com/user/my-repo; contact: nelsonmau@example.com)';
 
 // Endpoint for SPARQL queries
 app.get('/wikidata-sparql', async (req, res) => {
@@ -43,25 +42,25 @@ app.get('/wikidata-sparql', async (req, res) => {
 
         if (!wikidataResponse.ok) {
             const errorText = await wikidataResponse.text();
-            throw new Error(`Wikidata API error: ${wikidataResponse.status} - ${wikidataResponse.statusText} - ${errorText}`);
+            console.error(`Wikidata SPARQL Error: ${wikidataResponse.status}`, errorText);
+            return res.status(wikidataResponse.status).json({ error: 'Wikidata API error', details: errorText });
         }
 
         const data = await wikidataResponse.json();
         res.json(data);
     } catch (error) {
-        console.error('Proxy error:', error);
+        console.error('Proxy internal error:', error);
         res.status(500).json({ error: 'Failed to fetch data from Wikidata', details: error.message });
     }
 });
 
-// New endpoint for autocomplete search
+// Endpoint for autocomplete search
 app.get('/autocomplete', async (req, res) => {
     const search = req.query.search;
     if (!search) {
         return res.status(400).send('Missing search parameter.');
     }
 
-    // Using the official MediaWiki API for entity search
     const autocompleteEndpoint = `https://www.wikidata.org/w/api.php?action=wbsearchentities&format=json&language=en&type=item&continue=0&search=${encodeURIComponent(search)}`;
 
     try {
@@ -71,17 +70,17 @@ app.get('/autocomplete', async (req, res) => {
 
         if (!autocompleteResponse.ok) {
             const errorText = await autocompleteResponse.text();
-            throw new Error(`Wikidata Autocomplete API error: ${autocompleteResponse.status} - ${autocompleteResponse.statusText} - ${errorText}`);
+            console.error(`Wikidata Autocomplete Error: ${autocompleteResponse.status}`, errorText);
+            return res.status(autocompleteResponse.status).json({ error: 'Autocomplete API error', details: errorText });
         }
 
         const data = await autocompleteResponse.json();
-        res.json(data.search || []); // The results are in the 'search' property
+        res.json(data.search || []);
     } catch (error) {
         console.error('Autocomplete proxy error:', error);
         res.status(500).json({ error: 'Failed to fetch autocomplete data from Wikidata', details: error.message });
     }
 });
-
 
 app.listen(PORT, () => {
     console.log(`CORS proxy server running on http://localhost:${PORT}`);

@@ -2,276 +2,711 @@
   {
     "id": "Q821293",
     "label": "Rio Tinto",
-    "description": "Mining"
+    "description": "Iron Ore, Aluminum, Copper, and Lithium."
   },
   {
     "id": "Q625713",
     "label": "BHP Group",
-    "description": "Mining"
+    "description": "Iron Ore, Copper, Coal, Nickel, and Potash."
   },
   {
     "id": "Q202841",
     "label": "Zijin Mining",
-    "description": "Mining"
+    "description": "Copper, Gold, and Lithium (Lithium \"Argentina\")."
   },
   {
     "id": "Q1073509",
     "label": "China Shenhua Energy",
-    "description": "Mining"
+    "description": "World's largest Coal mining company; Power."
   },
   {
     "id": "Q7569806",
     "label": "Southern Copper Corporation",
-    "description": "Mining"
+    "description": "One of the world's largest Copper producers."
   },
   {
     "id": "Q1785405",
     "label": "Newmont Corporation",
-    "description": "Mining"
+    "description": "World's largest Gold producer; Copper."
   },
   {
     "id": "Q38676",
     "label": "Agnico Eagle Mines",
-    "description": "Mining"
+    "description": "High-grade Gold mining (Canada, Finland, Mexico)."
   },
   {
-    "id": "Q6721006",
-    "label": "Ma'aden (Saudi Arabian Mining Company)",
-    "description": "Mining"
+    "id": "Q112178330",
+    "label": "Ma’aden (Saudi Arabian Mining Company)",
+    "description": "Phosphate (Fertilizer), Aluminum, and Gold."
   },
   {
     "id": "Q623591",
     "label": "Grupo México",
-    "description": "Mining"
+    "description": "Copper, Molybdenum, Silver, and Rail Transport."
   },
   {
     "id": "Q583268",
     "label": "Vale S.A.",
-    "description": "Mining"
+    "description": "World's largest Iron Ore & Nickel producer."
   },
   {
     "id": "Q124976",
     "label": "Coal India",
-    "description": "Mining"
+    "description": "Largest Coal producer globally (State-owned)."
   },
   {
     "id": "Q1438957",
     "label": "Fortescue Metals Group",
-    "description": "Mining"
+    "description": "Iron Ore and Green Hydrogen (Fortescue Energy)."
+  },
+  {
+    "id": "Q96100147",
+    "label": "Bayan Resources",
+    "description": "High-calorie Coal mining and infrastructure."
   },
   {
     "id": "Q808908",
     "label": "Barrick Gold",
-    "description": "Mining"
+    "description": "Gold and Copper (Tier One mining assets)."
   },
   {
     "id": "Q541451",
     "label": "Anglo American",
-    "description": "Mining"
+    "description": "Copper, Iron Ore, PGM (Platinum), Diamonds."
   },
   {
     "id": "Q1747133",
     "label": "Wheaton Precious Metals",
-    "description": "Mining"
+    "description": "Precious Metals Streaming (Gold and Silver)."
+  },
+  {
+    "id": "Q169339",
+    "label": "Glencore",
+    "description": "nan"
   },
   {
     "id": "Q182477",
     "label": "Nvidia",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q2283",
     "label": "Microsoft",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q312",
     "label": "Apple",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q20800404",
     "label": "Alphabet (Google)",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q3884",
     "label": "Amazon",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q380",
     "label": "Meta Platforms",
-    "description": "Tech"
+    "description": "nan"
   },
   {
-    "id": "Q790060",
+    "id": "Q555925",
     "label": "Broadcom",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q713418",
     "label": "TSMC",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q478214",
     "label": "Tesla",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q19900",
     "label": "Oracle",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q907311",
     "label": "Netflix",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q552581",
     "label": "SAP",
-    "description": "Tech"
+    "description": "nan"
   },
   {
-    "id": "Q297879",
+    "id": "Q131884788",
     "label": "ASML",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q20718",
     "label": "Samsung Electronics",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q37156",
     "label": "IBM",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q173395",
     "label": "Cisco Systems",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q128896",
     "label": "AMD",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q544847",
     "label": "Qualcomm",
-    "description": "Tech"
+    "description": "nan"
   },
   {
     "id": "Q248",
     "label": "Intel",
-    "description": "Tech"
+    "description": "nan"
   },
   {
-    "id": "Q11463",
-    "label": "Adobe",
-    "description": "Tech"
-  },
-  {
-    "id": "Q89368734",
+    "id": "Q180507",
     "label": "RTX (Raytheon Technologies)",
-    "description": "Defence"
+    "description": "Missile defense (Patriot), Aircraft engines (Pratt & Whitney), Avionics, and Intelligence systems."
   },
   {
-    "id": "Q1886126",
-    "label": "Safran",
-    "description": "Defence"
+    "id": "Q132075018",
+    "label": "Safran SA",
+    "description": "Propulsion / Equipment"
   },
   {
-    "id": "Q898208",
+    "id": "Q37147733",
     "label": "Honeywell",
-    "description": "Defence"
+    "description": "Avionics, Aircraft Engines, Tactical Guidance, Building Automation."
   },
   {
     "id": "Q7240",
     "label": "Lockheed Martin",
-    "description": "Defence"
+    "description": "F-35 Fighter Jets, Missiles, Missile Defense (THAAD), Space Systems."
   },
   {
     "id": "Q161544",
-    "label": "Rheinmetall",
-    "description": "Defence"
+    "label": "Rheinmetall AG",
+    "description": "Land Systems / Ammo"
   },
   {
     "id": "Q502940",
     "label": "General Dynamics",
-    "description": "Defence"
+    "description": "Abrams Tanks, Nuclear Submarines (Electric Boat), Gulfstream Jets."
   },
   {
     "id": "Q329953",
     "label": "Northrop Grumman",
-    "description": "Defence"
+    "description": "B-21 Stealth Bomber, Global Hawk UAVs, Space Technology, Cyber Security."
   },
   {
     "id": "Q739416",
-    "label": "BAE Systems",
-    "description": "Defence"
+    "label": "BAE Systems PLC",
+    "description": "Land / Naval / Air"
   },
   {
-    "id": "Q1161666",
-    "label": "Thales",
-    "description": "Defence"
+    "id": "Q21285865",
+    "label": "Thales Group",
+    "description": "Electronics / Cyber"
   },
   {
     "id": "Q30291091",
     "label": "L3Harris Technologies",
-    "description": "Defence"
+    "description": "Tactical Communications, Electronic Warfare, Satellite Sensors."
   },
   {
     "id": "Q357095",
     "label": "Hindustan Aeronautics",
-    "description": "Defence"
+    "description": "Tejas Fighter Jets, Military Helicopters, Engine MRO (Maintenance)."
   },
   {
     "id": "Q910379",
-    "label": "Leonardo",
-    "description": "Defence"
+    "label": "Leonardo S.p.A.",
+    "description": "Helicopters / Sensors"
   },
   {
     "id": "Q3630918",
     "label": "Bharat Electronics",
-    "description": "Defence"
+    "description": "Radars, Sonars, Naval Systems, Electronic Warfare (EW) suites."
   },
   {
     "id": "Q219501",
     "label": "Saab AB",
-    "description": "Defence"
+    "description": "Air / Naval / Subs"
   },
   {
     "id": "Q297600",
     "label": "Aselsan",
-    "description": "Defence"
+    "description": "Communication Tech, Radar & EW, Electro-optics, Remote Weapon Stations."
   },
   {
     "id": "Q919300",
     "label": "AeroVironment",
-    "description": "Defence"
+    "description": "Loitering Munitions (Switchblade), Small Unmanned Aircraft (Raven)."
   },
   {
     "id": "Q16858667",
     "label": "Kratos Defense & Security Solutions",
-    "description": "Defence"
+    "description": "UAVs"
   },
   {
     "id": "Q21236526",
-    "label": "Hensoldt",
-    "description": "Defence"
+    "label": "Hensoldt AG",
+    "description": "Optronics / Radar"
   },
   {
     "id": "Q7257522",
     "label": "Huntington Ingalls Industries",
-    "description": "Defence"
+    "description": "Largest US military shipbuilder (Aircraft carriers and submarines)."
   },
   {
     "id": "Q1661823",
     "label": "Indra Sistemas",
-    "description": "Defence"
+    "description": "Defense IT / Radar"
+  },
+  {
+    "id": "Q30256275",
+    "label": "Airbus SE",
+    "description": "Aerospace / Missiles"
+  },
+  {
+    "id": "Q243278",
+    "label": "Rolls-Royce Holdings",
+    "description": "Engines / Nuclear"
+  },
+  {
+    "id": "Q460487",
+    "label": "Dassault Aviation",
+    "description": "Fighter Jets (Rafale)"
+  },
+  {
+    "id": "Q1770909",
+    "label": "Kongsberg Gruppen",
+    "description": "Naval / Missiles"
+  },
+  {
+    "id": "Q128929",
+    "label": "MTU Aero Engines",
+    "description": "Military Engines"
+  },
+  {
+    "id": "Q131261734",
+    "label": "MBDA",
+    "description": "Missile Systems"
+  },
+  {
+    "id": "Q277211",
+    "label": "Naval Group",
+    "description": "Naval / Submarines"
+  },
+  {
+    "id": "Q19966744",
+    "label": "KNDS (KMW+Nexter)",
+    "description": "Main Battle Tanks"
+  },
+  {
+    "id": "Q385426",
+    "label": "Babcock International",
+    "description": "Naval Support"
+  },
+  {
+    "id": "Q1327429",
+    "label": "Fincantieri S.p.A.",
+    "description": "Shipbuilding"
+  },
+  {
+    "id": "Q1759946",
+    "label": "QinetiQ Group",
+    "description": "Defense R&D / Tech"
+  },
+  {
+    "id": "Q551068",
+    "label": "ThyssenKrupp Marine",
+    "description": "Submarines (TKMS)"
+  },
+  {
+    "id": "Q3305280",
+    "label": "Melrose Industries",
+    "description": "Aerospace Components"
+  },
+  {
+    "id": "Q103812026",
+    "label": "Exxelia",
+    "description": "Electronics"
+  },
+  {
+    "id": "Q1220628",
+    "label": "Diehl Stiftung",
+    "description": "Missiles / Land"
+  },
+  {
+    "id": "Q55568528",
+    "label": "Colt CZ Group",
+    "description": "Small Arms"
+  },
+  {
+    "id": "Q613116",
+    "label": "Patria Group",
+    "description": "Armored Vehicles"
+  },
+  {
+    "id": "Q1069644",
+    "label": "Chemring Group",
+    "description": "Sensors / Energetics"
+  },
+  {
+    "id": "Q33946",
+    "label": "Czechoslovak Group",
+    "description": "Land Systems / Ammo"
+  },
+  {
+    "id": "Q19401271",
+    "label": "PGZ (Polish Armaments)",
+    "description": "National Defense"
+  },
+  {
+    "id": "Q1964355",
+    "label": "Nammo AS",
+    "description": "Ammo / Rockets"
+  },
+  {
+    "id": "Q1325369",
+    "label": "Elbit Systems",
+    "description": "UAVs (Hermes), Avionics, Land Systems, Cyber."
+  },
+  {
+    "id": "Q876017",
+    "label": "Israel Aerospace Industries (IAI)",
+    "description": "Missile Defense (Arrow), Satellites, Aviation MRO."
+  },
+  {
+    "id": "Q154610",
+    "label": "Rafael Advanced Defense Systems",
+    "description": "Missile Systems (Iron Dome, Spike), Active Protection."
+  },
+  {
+    "id": "Q1148423",
+    "label": "Israel Military Industries (IMI)",
+    "description": "Munitions, Tank Armament, Small Arms."
+  },
+  {
+    "id": "Q744498",
+    "label": "Plasan",
+    "description": "Survivability and Armored Vehicle protection."
+  },
+  {
+    "id": "Q2002470",
+    "label": "Turkish Aerospace (TAI)",
+    "description": "Fighters (KAAN), Helicopters (ATAK), UAVs (Anka)."
+  },
+  {
+    "id": "Q6023024",
+    "label": "Baykar Tech",
+    "description": "Combat UAVs (Bayraktar TB2, Akıncı, Kızılelma)."
+  },
+  {
+    "id": "Q2548367",
+    "label": "Roketsan",
+    "description": "Missiles, Rockets, Guided Munitions."
+  },
+  {
+    "id": "Q5628993",
+    "label": "Havelsan",
+    "description": "Software, Command & Control (C4ISR), Simulators."
+  },
+  {
+    "id": "Q1331507",
+    "label": "Almaz-Antey",
+    "description": "S-400/S-500 Surface-to-Air Missile Systems."
+  },
+  {
+    "id": "Q66",
+    "label": "United Aircraft Corp (UAC)",
+    "description": "Sukhoi and MiG Fighter Jets, Strategic Bombers."
+  },
+  {
+    "id": "Q1762250",
+    "label": "Uralvagonzavod",
+    "description": "Main Battle Tanks (T-90, T-14 Armata)."
+  },
+  {
+    "id": "Q4330413",
+    "label": "United Shipbuilding Corp (USC)",
+    "description": "Nuclear Submarines and Surface Vessels."
+  },
+  {
+    "id": "Q3339447",
+    "label": "Tactical Missiles Corp (KTRV)",
+    "description": "Precision-guided cruise and anti-ship missiles."
+  },
+  {
+    "id": "Q10874039",
+    "label": "AVIC",
+    "description": "Military Aircraft (J-20, J-10), Transport, Engines."
+  },
+  {
+    "id": "Q1538336",
+    "label": "NORINCO",
+    "description": "Land Systems, Tanks, Artillery, Small Arms."
+  },
+  {
+    "id": "Q10874081",
+    "label": "CASIC",
+    "description": "Missiles (HQ-9, DF-series), Space Tech, Radars."
+  },
+  {
+    "id": "Q34038",
+    "label": "CASC",
+    "description": "Strategic Missiles, Rockets, Satellite Systems."
+  },
+  {
+    "id": "Q1073512",
+    "label": "CSSC",
+    "description": "World's largest shipbuilder; Carriers, Subs, Frigates."
+  },
+  {
+    "id": "Q921689",
+    "label": "Albemarle Corp",
+    "description": "Lithium"
+  },
+  {
+    "id": "Q3067064",
+    "label": "SQM",
+    "description": "Lithium"
+  },
+  {
+    "id": "Q10954805",
+    "label": "Ganfeng Lithium",
+    "description": "Lithium"
+  },
+  {
+    "id": "Q55635834",
+    "label": "Tianqi Lithium",
+    "description": "Lithium"
+  },
+  {
+    "id": "Q889659",
+    "label": "Mineral Resources",
+    "description": "Lithium"
+  },
+  {
+    "id": "Q56064089",
+    "label": "Pilbara Minerals",
+    "description": "Lithium"
+  },
+  {
+    "id": "Q109625740",
+    "label": "Liontown Resources",
+    "description": "Lithium"
+  },
+  {
+    "id": "Q1105695",
+    "label": "Codelco",
+    "description": "Copper"
+  },
+  {
+    "id": "Q1453620",
+    "label": "Freeport-McMoRan",
+    "description": "Copper"
+  },
+  {
+    "id": "Q625713",
+    "label": "BHP Group",
+    "description": "Copper"
+  },
+  {
+    "id": "Q169339",
+    "label": "Glencore",
+    "description": "Copper"
+  },
+  {
+    "id": "Q202841",
+    "label": "Zijin Mining",
+    "description": "Copper"
+  },
+  {
+    "id": "Q7569806",
+    "label": "Southern Copper",
+    "description": "Copper"
+  },
+  {
+    "id": "Q821293",
+    "label": "Rio Tinto",
+    "description": "Copper"
+  },
+  {
+    "id": "Q1476710",
+    "label": "KGHM Polska Miedź",
+    "description": "Copper"
+  },
+  {
+    "id": "Q541451",
+    "label": "Anglo American",
+    "description": "Copper"
+  },
+  {
+    "id": "Q1419532",
+    "label": "First Quantum",
+    "description": "Copper"
+  },
+  {
+    "id": "Q16923900",
+    "label": "Tongwei Co.",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q535517",
+    "label": "Wacker Chemie",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q124670561",
+    "label": "GCL Technology",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q16973267",
+    "label": "Daqo New Energy",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q1331615",
+    "label": "Elkem ASA",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q125144368",
+    "label": "Ferroglobe",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q124670171",
+    "label": "Xinte Energy",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q5712288",
+    "label": "Hemlock Semiconductor",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q108003110",
+    "label": "Hoshine Silicon",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q1423176",
+    "label": "Mitsubishi Materials",
+    "description": "Silicon"
+  },
+  {
+    "id": "Q55697404",
+    "label": "China Northern Rare Earth",
+    "description": "Neodimio"
+  },
+  {
+    "id": "Q105563992",
+    "label": "MP Materials",
+    "description": "Neodimio"
+  },
+  {
+    "id": "Q6708384",
+    "label": "Lynas Rare Earths",
+    "description": "Neodimio"
+  },
+  {
+    "id": "Q846839",
+    "label": "China Minmetals",
+    "description": "Neodimio"
+  },
+  {
+    "id": "Q15916333",
+    "label": "Shenghe Resources",
+    "description": "Neodimio"
+  },
+  {
+    "id": "Q16829889",
+    "label": "Arafura Rare Earths",
+    "description": "Neodimio"
+  },
+  {
+    "id": "Q1117761",
+    "label": "Iluka Resources",
+    "description": "Neodimio"
+  },
+  {
+    "id": "Q6021378",
+    "label": "Indian Rare Earths (IREL)",
+    "description": "Neodimio"
+  },
+  {
+    "id": "Q447855",
+    "label": "Chinalco (Gallium)",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q121407257",
+    "label": "Vital Materials",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q195356",
+    "label": "Dowa Holdings",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q902769",
+    "label": "Umicore",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q30292359",
+    "label": "Recylex",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q131896252",
+    "label": "Neo Performance (Gallium)",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q4743673",
+    "label": "American Elements",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q20063580",
+    "label": "Zhuzhou Smelter Group",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q135325",
+    "label": "Alcoa Corporation",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q1094",
+    "label": "Indium Corporation",
+    "description": "Gallium"
+  },
+  {
+    "id": "Q5418319",
+    "label": "Eviden",
+    "description": "brand launched by the Atos Group in 2023 to house its \"Big Data and Security\" (BDS) activities, including what remains of the original Amesys business (now modernized into cybersecurity and high-performance computing)"
   }
 ]
