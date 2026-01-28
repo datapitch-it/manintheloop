@@ -68,6 +68,7 @@ def sync_anagrafica():
 
     # 3. Merge & Enrich
     new_json_list = []
+    seen_ids = set()
     
     # Iterate exactly in the order of the CSV (Source of Truth)
     for index, row in df_csv.iterrows():
@@ -87,13 +88,9 @@ def sync_anagrafica():
         # CHECK 1: Do we already have this company in our clean JSON?
         if company_name in existing_data:
             cached_entry = existing_data[company_name]
-            # Keep the existing ID (it's protected/validated)
             entry['id'] = cached_entry['id']
-            # Update description from CSV (CSV rules for content updates)
-            # OR keep JSON description? User said "CSV with master data". 
-            # Usually master data updates descriptions. Let's keep CSV desc.
         
-        # CHECK 2: Do we have it in the CSV itself (some CSVs have a 'Wikidata' column)?
+        # CHECK 2: Do we have it in the CSV itself?
         if (entry['id'] is None) and ('Wikidata' in row) and pd.notna(row['Wikidata']):
             wid = str(row['Wikidata']).strip()
             if wid.startswith('Q'):
@@ -110,17 +107,15 @@ def sync_anagrafica():
             else:
                 print(f"  -> No ID found.")
         
-        # Add to list only if we have an ID (or should we keep them without ID?)
-        # User said "quelli che NON ce l'hanno, eseguo script per cercarlo".
-        # Assuming we want to keep them even if not found, to preserve the Master List view?
-        # But the app needs an ID to work. Let's keep them with id: null or skip?
-        # Existing JSON structure implies ID is mandatory for the app logic usually.
-        # We will add it.
+        # FINAL STEP: Check for uniqueness by ID before adding
         if entry['id']:
-            new_json_list.append(entry)
+            if entry['id'] not in seen_ids:
+                new_json_list.append(entry)
+                seen_ids.add(entry['id'])
+            else:
+                print(f"  [Info] Skipping duplicate ID for '{company_name}' ({entry['id']})")
         else:
-            # Add with placeholder or skip? 
-            # Let's verify strictness. For now add, let app handle nulls if any.
+            # Skip entries without an ID
             pass
 
     # 4. Save

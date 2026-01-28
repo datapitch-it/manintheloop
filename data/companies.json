@@ -55,11 +55,6 @@
     "description": "Copper, Iron Ore, PGM (Platinum), Diamonds."
   },
   {
-    "id": "Q541451",
-    "label": "Anglo American",
-    "description": "Copper"
-  },
-  {
     "id": "Q312",
     "label": "Apple",
     "description": "nan"
@@ -118,11 +113,6 @@
     "id": "Q625713",
     "label": "BHP Group",
     "description": "Iron Ore, Copper, Coal, Nickel, and Potash."
-  },
-  {
-    "id": "Q625713",
-    "label": "BHP Group",
-    "description": "Copper"
   },
   {
     "id": "Q483034",
@@ -273,11 +263,6 @@
     "id": "Q169339",
     "label": "Glencore",
     "description": "nan"
-  },
-  {
-    "id": "Q169339",
-    "label": "Glencore",
-    "description": "Copper"
   },
   {
     "id": "Q623591",
@@ -515,11 +500,6 @@
     "description": "Iron Ore, Aluminum, Copper, and Lithium."
   },
   {
-    "id": "Q821293",
-    "label": "Rio Tinto",
-    "description": "Copper"
-  },
-  {
     "id": "Q2548367",
     "label": "Roketsan",
     "description": "Missiles, Rockets, Guided Munitions."
@@ -558,11 +538,6 @@
     "id": "Q15916333",
     "label": "Shenghe Resources",
     "description": "Neodimio"
-  },
-  {
-    "id": "Q7569806",
-    "label": "Southern Copper",
-    "description": "Copper"
   },
   {
     "id": "Q7569806",
@@ -648,10 +623,5 @@
     "id": "Q131141984",
     "label": "Zijin Mining",
     "description": "Copper, Gold, and Lithium (Lithium \"Argentina\")."
-  },
-  {
-    "id": "Q131141984",
-    "label": "Zijin Mining",
-    "description": "Copper"
   }
 ]
