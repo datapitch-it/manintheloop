@@ -85,7 +85,7 @@ def main():
             time.sleep(0.2)
 
     # Final Save
-    df.to_csv('data/companies.csv', index=False)
+    df.to_csv('../data/companies.csv', index=False)
     
     app_data = []
     final_df = df[df['Wikidata'].notna() & (df['Wikidata'].astype(str).str.strip() != '')]
@@ -96,7 +96,7 @@ def main():
             'description': str(row.get('MAIN FOCUS', row.get('SECTOR', '')))
         })
     
-    with open('data/companies.json', 'w', encoding='utf-8') as f:
+    with open('../data/companies.json', 'w', encoding='utf-8') as f:
         json.dump(app_data, f, indent=2, ensure_ascii=False)
     
     print(f"\nRestoration complete! App now has {len(app_data)} companies.")

@@ -11,8 +11,8 @@ def update_data():
         df = pd.read_csv(CSV_URL)
         
         # Save a local copy of the CSV
-        df.to_csv('data/companies.csv', index=False)
-        print("Saved local copy to data/companies.csv")
+        df.to_csv('../data/companies.csv', index=False)
+        print("Saved local copy to ../data/companies.csv")
 
         # Filter out entries without Wikidata IDs
         # The column name in the Google Sheet is 'Wikidata'
@@ -31,7 +31,7 @@ def update_data():
             })
 
         # Write to JSON
-        with open('data/companies.json', 'w', encoding='utf-8') as f:
+        with open('../data/companies.json', 'w', encoding='utf-8') as f:
             json.dump(companies, f, indent=2, ensure_ascii=False)
 
         print(f"Successfully converted {len(companies)} companies to JSON")

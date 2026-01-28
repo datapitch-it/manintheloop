@@ -23,6 +23,11 @@ ENV/
 .DS_Store
 Thumbs.db
 
+# Project specific
+.claude/
+.gemini/
+*.local.json
+
 # Logs
 *.log
 npm-debug.log*
