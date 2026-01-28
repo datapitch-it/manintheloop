@@ -80,102 +80,102 @@
     "description": "Precious Metals Streaming (Gold and Silver)."
   },
   {
-    "id": "Q182477",
+    "id": "Q169339",
     "label": "Glencore",
     "description": "nan"
   },
   {
-    "id": "Q2283",
+    "id": "Q182477",
     "label": "Nvidia",
     "description": "nan"
   },
   {
-    "id": "Q312",
+    "id": "Q2283",
     "label": "Microsoft",
     "description": "nan"
   },
   {
-    "id": "Q20800404",
+    "id": "Q312",
     "label": "Apple",
     "description": "nan"
   },
   {
-    "id": "Q3884",
+    "id": "Q20800404",
     "label": "Alphabet (Google)",
     "description": "nan"
   },
   {
-    "id": "Q380",
+    "id": "Q3884",
     "label": "Amazon",
     "description": "nan"
   },
   {
-    "id": "Q790060",
+    "id": "Q380",
     "label": "Meta Platforms",
     "description": "nan"
   },
   {
-    "id": "Q713418",
+    "id": "Q483034",
     "label": "Broadcom",
     "description": "nan"
   },
   {
-    "id": "Q765530",
+    "id": "Q713418",
     "label": "TSMC",
     "description": "nan"
   },
   {
-    "id": "Q19900",
+    "id": "Q478214",
     "label": "Tesla",
     "description": "nan"
   },
   {
-    "id": "Q907311",
+    "id": "Q19900",
     "label": "Oracle",
     "description": "nan"
   },
   {
-    "id": "Q552581",
+    "id": "Q907311",
     "label": "Netflix",
     "description": "nan"
   },
   {
-    "id": "Q297879",
+    "id": "Q552581",
     "label": "SAP",
     "description": "nan"
   },
   {
-    "id": "Q20718",
+    "id": "Q297879",
     "label": "ASML",
     "description": "nan"
   },
   {
-    "id": "Q37156",
+    "id": "Q20718",
     "label": "Samsung Electronics",
     "description": "nan"
   },
   {
-    "id": "Q173395",
+    "id": "Q37156",
     "label": "IBM",
     "description": "nan"
   },
   {
-    "id": "Q128896",
+    "id": "Q173395",
     "label": "Cisco Systems",
     "description": "nan"
   },
   {
-    "id": "Q544847",
+    "id": "Q128896",
     "label": "AMD",
     "description": "nan"
   },
   {
-    "id": "Q248",
+    "id": "Q544847",
     "label": "Qualcomm",
     "description": "nan"
   },
   {
-    "id": "Q11463",
+    "id": "Q248",
     "label": "Intel",
     "description": "nan"
   },
