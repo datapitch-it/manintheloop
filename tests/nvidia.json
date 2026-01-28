@@ -1,0 +1,1520 @@
+{
+  "head": {
+    "vars": [
+      "LEGAL_FORM",
+      "EMPLOYEES_COUNT",
+      "BOARD_MEMBERS",
+      "WIKIPEDIA_URL",
+      "CEOS_HISTORY",
+      "LOGO_IMAGE",
+      "SLOGAN",
+      "FACEBOOK_IDS",
+      "SECTORS",
+      "OFFICIAL_WEBSITE",
+      "BRANDS_OWNED",
+      "SUBSIDIARIES",
+      "CRUNCHBASE_PROFILE",
+      "WIKIDATA",
+      "OWNERS_HISTORY",
+      "PRODUCTS_SERVICES",
+      "ISIN_CODES",
+      "FINANCIAL_HISTORY",
+      "TWITTER_HANDLES",
+      "HEADQUARTERS",
+      "BLOOMBERG_ID",
+      "TICKER_SYMBOLS",
+      "REPLACED_BY",
+      "LINKEDIN_IDS",
+      "LEGAL_ENTITY_IDENTIFIER",
+      "FOUNDED_BY",
+      "COUNTRY_label",
+      "YOUTUBE_CHANNELS",
+      "COMPANY_label",
+      "PARENT_BRANDS",
+      "REPLACES",
+      "SWIFT_BIC_CODE",
+      "PARENT_ORGANIZATIONS",
+      "INSTAGRAM_HANDLES",
+      "GITHUB_USERNAMES",
+      "INCEPTION_DATE",
+      "OPENCORPORATES_ID",
+      "STOCK_EXCHANGES",
+      "DESCRIPTION",
+      "SEC_CIK_NUMBER",
+      "NAMED_AFTER"
+    ]
+  },
+  "results": {
+    "bindings": [
+      {
+        "WIKIDATA": {
+          "type": "uri",
+          "value": "http://www.wikidata.org/entity/Q182477"
+        },
+        "COMPANY_label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Nvidia"
+        },
+        "DESCRIPTION": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "American multinational technology company"
+        },
+        "COUNTRY_label": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "United States"
+        },
+        "WIKIPEDIA_URL": {
+          "type": "uri",
+          "value": "https://en.wikipedia.org/wiki/Nvidia"
+        },
+        "INCEPTION_DATE": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+          "type": "literal",
+          "value": "1993-04-05T00:00:00Z"
+        },
+        "LEGAL_FORM": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "public company"
+        },
+        "EMPLOYEES_COUNT": {
+          "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+          "type": "literal",
+          "value": "13775"
+        },
+        "REPLACES": {
+          "xml:lang": "en",
+          "type": "literal",
+          "value": "Ageia"
+        },
+        "LEGAL_ENTITY_IDENTIFIER": {
+          "type": "literal",
+          "value": "549300S4KLFTLO7GSQ80"
+        },
+        "SECTORS": {
+          "type": "literal",
+          "value": "semiconductor industry"
+        },
+        "HEADQUARTERS": {
+          "type": "literal",
+          "value": "California, Santa Clara"
+        },
+        "FOUNDED_BY": {
+          "type": "literal",
+          "value": "Jensen Huang, Chris Malachowsky, Curtis Priem"
+        },
+        "CEOS_HISTORY": {
+          "type": "literal",
+          "value": "Jensen Huang (from 1993 to present)"
+        },
+        "OWNERS_HISTORY": {
+          "type": "literal",
+          "value": "Fidelity Investments (as of 2024); State Street Corporation (as of 2024); BlackRock (as of 2024); Jensen Huang (as of 2024); The Vanguard Group (as of 2024)"
+        },
+        "BOARD_MEMBERS": {
+          "type": "literal",
+          "value": "Jensen Huang, Persis Drell, John O. Dabiri, Michael G. McCaffery, Aarti Shah, Harvey C. Jones, Tench Coxe, Dawn Hudson, Melissa Lora, Mark L. Perry, A. Brooke Seawell, Mark Stevens, Rob Burgess, Stephen Neal"
+        },
+        "PARENT_ORGANIZATIONS": {
+          "type": "literal",
+          "value": ""
+        },
+        "SUBSIDIARIES": {
+          "type": "literal",
+          "value": "Nvidia Ltd., Mental Images, Mellanox Technologies, Icera"
+        },
+        "PRODUCTS_SERVICES": {
+          "type": "literal",
+          "value": "software, chipset, graphics processing unit"
+        },
+        "OFFICIAL_WEBSITE": {
+          "type": "uri",
+          "value": "https://www.nvidia.com/"
+        },
+        "LOGO_IMAGE": {
+          "type": "uri",
+          "value": "http://commons.wikimedia.org/wiki/Special:FilePath/NVIDIA%20logo.svg"
+        },
+        "TWITTER_HANDLES": {
+          "type": "literal",
+          "value": "nvidia"
+        },
+        "LINKEDIN_IDS": {
+          "type": "literal",
+          "value": "nvidia"
+        },
+        "FACEBOOK_IDS": {
+          "type": "literal",
+          "value": "NVIDIA"
+        },
+        "INSTAGRAM_HANDLES": {
+          "type": "literal",
+          "value": "nvidia"
+        },
+        "YOUTUBE_CHANNELS": {
+          "type": "literal",
+          "value": "UCHuiy8bXnmK5nisYHUd1J5g"
+        },
+        "GITHUB_USERNAMES": {
+          "type": "literal",
+          "value": "NVIDIA"
+        },
+        "CRUNCHBASE_PROFILE": {
+          "type": "literal",
+          "value": "nvidia"
+        },
+        "OPENCORPORATES_ID": {
+          "type": "literal",
+          "value": "us_de/2862596"
+        },
+        "STOCK_EXCHANGES": {
+          "type": "literal",
+          "value": "Nasdaq"
+        },
+        "TICKER_SYMBOLS": {
+          "type": "literal",
+          "value": ""
+        },
+        "ISIN_CODES": {
+          "type": "literal",
+          "value": "US67066G1040"
+        },
+        "SEC_CIK_NUMBER": {
+          "type": "literal",
+          "value": "0001045810"
+        },
+        "SWIFT_BIC_CODE": {
+          "type": "literal",
+          "value": "NVDAUS6SXXX"
+        },
+        "BRANDS_OWNED": {
+          "type": "literal",
+          "value": "GeForce Now, Nvidia Riva, Ageia"
+        },
+        "PARENT_BRANDS": {
+          "type": "literal",
+          "value": ""
+        },
+        "FINANCIAL_HISTORY": {
+          "value": [
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Market Cap"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "2723000000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2025-05-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Market Cap"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "2962404000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2025-03-24T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Employees"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "36000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2025-02-26T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "11050000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2024-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "72880000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2024-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "81453000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2024-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "130497000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2024-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Market Cap"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "641100000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2023-03-20T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "12030000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2023-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "29760000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2023-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "32972000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2023-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "60922000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2023-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Market Cap"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "591050000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2022-02-18T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "11830000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2022-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "4368000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2022-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "4224000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2022-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "26974000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2022-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Market Cap"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "548070000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2021-08-24T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "7530000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2021-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "9752000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2021-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "10041000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2021-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "26914000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2021-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "2640000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2020-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Equity"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "12204000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2020-01-26T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Assets"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "17315000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2020-01-26T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Employees"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "13775"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2020-01-26T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "4332000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2020-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "4532000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2020-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "16675000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2020-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "1980000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2019-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Equity"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "9342000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2019-01-27T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Assets"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "13292000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2019-01-27T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "2796000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2019-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "2846000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2019-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "10918000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2019-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "2000000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2018-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Assets"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "11241000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2018-01-28T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Employees"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "11528"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2018-01-28T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Equity"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "7471000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2018-01-23T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "4141000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2018-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "3804000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2018-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "11716000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2018-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "2810000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2017-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Assets"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "9841000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2017-01-29T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "3047000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2017-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "3210000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2017-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "9714000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2017-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Assets"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "7370000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2016-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "1510000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2016-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "1666000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2016-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "1934000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2016-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "6910000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2016-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "1390000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2015-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "614000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2015-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "747000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2015-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "5010000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2015-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Debt"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "1370000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2014-01-31T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Assets"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "7251000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2014-01-26T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "631000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2014-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "759000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2014-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "4682000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2014-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "440000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2013-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "496000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2013-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "4130000000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2013-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "562536000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2012-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "648239000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2012-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "4280159000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2012-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "581090000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2011-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "648299000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2011-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "3997930000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2011-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "253146000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2010-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "255747000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2010-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "3543309000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2010-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "-67987000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2009-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "-98945000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2009-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "3326445000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2009-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "-30041000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2008-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "-70700000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2008-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "3424859000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2008-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Net Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "797645000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2007-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Operating Income"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "836346000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2007-01-01T00:00:00Z"
+              }
+            },
+            {
+              "metric_label": {
+                "type": "literal",
+                "value": "Total Revenue"
+              },
+              "value": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#decimal",
+                "type": "literal",
+                "value": "4097860000"
+              },
+              "date": {
+                "datatype": "http://www.w3.org/2001/XMLSchema#dateTime",
+                "type": "literal",
+                "value": "2007-01-01T00:00:00Z"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -227,6 +227,7 @@ document.addEventListener('DOMContentLoaded', () => {
             (SAMPLE(?employees_count) AS ?EMPLOYEES_COUNT)
             (SAMPLE(?replaces_label) AS ?REPLACES)
             (SAMPLE(?replaced_by_label) AS ?REPLACED_BY)
+            (SAMPLE(?lei) AS ?LEGAL_ENTITY_IDENTIFIER)
             (GROUP_CONCAT(DISTINCT ?SECTOR_label; separator=", ") AS ?SECTORS)
             (GROUP_CONCAT(DISTINCT ?HEADQUARTERS_label; separator=", ") AS ?HEADQUARTERS)
             (GROUP_CONCAT(DISTINCT ?founder_label; separator=", ") AS ?FOUNDED_BY)
@@ -250,6 +251,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 OPTIONAL {?WIKIDATA wdt:P1128 ?employees_count.}
                 OPTIONAL {?WIKIDATA wdt:P1365 ?replaces. ?replaces rdfs:label ?replaces_label. FILTER(LANG(?replaces_label) = "en")}
                 OPTIONAL {?WIKIDATA wdt:P1366 ?replaced_by. ?replaced_by rdfs:label ?replaced_by_label. FILTER(LANG(?replaced_by_label) = "en")}
+                OPTIONAL {?WIKIDATA wdt:P1278 ?lei.}
             } GROUP BY ?WIKIDATA`;
     }
 
@@ -291,6 +293,7 @@ document.addEventListener('DOMContentLoaded', () => {
             (GROUP_CONCAT(DISTINCT ?github_username; separator=", ") AS ?GITHUB_USERNAMES)
             (SAMPLE(?crunchbase_profile) AS ?CRUNCHBASE_PROFILE)
             (SAMPLE(?bloomberg_id) AS ?BLOOMBERG_ID)
+            (SAMPLE(?opencorporates_id) AS ?OPENCORPORATES_ID)
             WHERE {
             VALUES ?WIKIDATA { wd:${wikidataId} }
             OPTIONAL {?WIKIDATA wdt:P856 ?official_website.}
@@ -303,6 +306,7 @@ document.addEventListener('DOMContentLoaded', () => {
             OPTIONAL {?WIKIDATA wdt:P2037 ?github_username.}
             OPTIONAL {?WIKIDATA wdt:P2088 ?crunchbase_profile.}
             OPTIONAL {?WIKIDATA wdt:P3052 ?bloomberg_id.}
+            OPTIONAL {?WIKIDATA wdt:P1320 ?opencorporates_id.}
         } GROUP BY ?WIKIDATA`;
     }
 
@@ -312,12 +316,14 @@ document.addEventListener('DOMContentLoaded', () => {
             (GROUP_CONCAT(DISTINCT ?ticker_symbol; separator=", ") AS ?TICKER_SYMBOLS)
             (GROUP_CONCAT(DISTINCT ?isin; separator=", ") AS ?ISIN_CODES)
             (SAMPLE(?sec_cik) AS ?SEC_CIK_NUMBER)
+            (SAMPLE(?swift_bic) AS ?SWIFT_BIC_CODE)
             WHERE {
             VALUES ?WIKIDATA { wd:${wikidataId} }
             OPTIONAL {?WIKIDATA wdt:P414 ?stock_exchange. ?stock_exchange rdfs:label ?stock_exchange_label. FILTER(LANG(?stock_exchange_label) = "en")}
             OPTIONAL {?WIKIDATA wdt:P249 ?ticker_symbol.}
             OPTIONAL {?WIKIDATA wdt:P946 ?isin.}
             OPTIONAL {?WIKIDATA wdt:P5531 ?sec_cik.}
+            OPTIONAL {?WIKIDATA wdt:P2627 ?swift_bic.}
         } GROUP BY ?WIKIDATA`;
     }
 
@@ -345,8 +351,16 @@ document.addEventListener('DOMContentLoaded', () => {
               ?statement ps:P2403 ?value.
               OPTIONAL { ?statement pq:P585 ?date. }
             } UNION {
-              ?WIKIDATA p:P2138 ?statement. BIND("Total Equity" AS ?metric_label)
+              ?WIKIDATA p:P2137 ?statement. BIND("Total Equity" AS ?metric_label)
+              ?statement ps:P2137 ?value.
+              OPTIONAL { ?statement pq:P585 ?date. }
+            } UNION {
+              ?WIKIDATA p:P2138 ?statement. BIND("Total Liabilities" AS ?metric_label)
               ?statement ps:P2138 ?value.
+              OPTIONAL { ?statement pq:P585 ?date. }
+            } UNION {
+              ?WIKIDATA p:P2133 ?statement. BIND("Total Debt" AS ?metric_label)
+              ?statement ps:P2133 ?value.
               OPTIONAL { ?statement pq:P585 ?date. }
             } UNION {
               ?WIKIDATA p:P1128 ?statement. BIND("Employees" AS ?metric_label)
@@ -378,17 +392,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const tbody = document.createElement('tbody');
         
         const fieldOrder = [
-            'COMPANY_label', 'DESCRIPTION', 'SECTORS', 'LEGAL_FORM', 'FOUNDED_BY', 'NAMED_AFTER', 'SLOGAN',
+            'COMPANY_label', 'DESCRIPTION', 'SECTORS', 'LEGAL_FORM', 'LEGAL_ENTITY_IDENTIFIER', 'FOUNDED_BY', 'NAMED_AFTER', 'SLOGAN',
             'WIKIPEDIA_URL', 'WIKIDATA', 'COUNTRY_label', 'HEADQUARTERS', 'INCEPTION_DATE',
             'EMPLOYEES_COUNT', 'REPLACES', 'REPLACED_BY',
             'CEOS_HISTORY', 'BOARD_MEMBERS', 'OWNERS_HISTORY',
-            'STOCK_EXCHANGES', 'TICKER_SYMBOLS', 'ISIN_CODES', 'SEC_CIK_NUMBER',
+            'STOCK_EXCHANGES', 'TICKER_SYMBOLS', 'ISIN_CODES', 'SEC_CIK_NUMBER', 'SWIFT_BIC_CODE',
             'FINANCIAL_HISTORY',
             'PARENT_ORGANIZATIONS', 'SUBSIDIARIES', 'PRODUCTS_SERVICES',
             'BRANDS_OWNED', 'PARENT_BRANDS',
             'OFFICIAL_WEBSITE', 'TWITTER_HANDLES', 'LINKEDIN_IDS', 'FACEBOOK_IDS',
             'INSTAGRAM_HANDLES', 'YOUTUBE_CHANNELS', 'GITHUB_USERNAMES',
-            'CRUNCHBASE_PROFILE', 'BLOOMBERG_ID', 'LOGO_IMAGE'
+            'CRUNCHBASE_PROFILE', 'BLOOMBERG_ID', 'OPENCORPORATES_ID', 'LOGO_IMAGE'
         ];
 
         fieldOrder.forEach(key => {
@@ -414,6 +428,8 @@ document.addEventListener('DOMContentLoaded', () => {
                                 'Operating Income': 'N/A',
                                 'Total Assets': 'N/A',
                                 'Total Equity': 'N/A',
+                                'Total Liabilities': 'N/A',
+                                'Total Debt': 'N/A',
                                 'Employees': 'N/A'
                             };
                         }
@@ -440,6 +456,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <th>Net Income</th>
                         <th>Total Assets</th>
                         <th>Total Equity</th>
+                        <th>Total Liabilities</th>
+                        <th>Total Debt</th>
                         <th>Employees</th>
                     </tr></thead>`;
                     const nestedTbody = document.createElement('tbody');
@@ -454,6 +472,8 @@ document.addEventListener('DOMContentLoaded', () => {
                             <td>${rowData['Net Income']}</td>
                             <td>${rowData['Total Assets']}</td>
                             <td>${rowData['Total Equity']}</td>
+                            <td>${rowData['Total Liabilities']}</td>
+                            <td>${rowData['Total Debt']}</td>
                             <td>${rowData['Employees']}</td>
                         </tr>`;
                     });
